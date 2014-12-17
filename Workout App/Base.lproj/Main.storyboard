@@ -114,7 +114,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="you@email.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G1k-EQ-tUn">
                                 <rect key="frame" x="57" y="110" width="261" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="51p-F0-jsV">
                                 <rect key="frame" x="57" y="148" width="261" height="30"/>
@@ -127,19 +127,19 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y2Y-xZ-1i5">
-                                <rect key="frame" x="57" y="224" width="261" height="30"/>
+                                <rect key="frame" x="57" y="224" width="130" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weight" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTg-zU-5dY">
                                 <rect key="frame" x="57" y="262" width="261" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fHP-Mb-vJR">
-                                <rect key="frame" x="126" y="300" width="123" height="29"/>
+                                <rect key="frame" x="195" y="225" width="123" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="Zsj-ht-KhE"/>
+                                    <constraint firstAttribute="width" constant="123" id="SvD-tX-7dy"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Male"/>
@@ -149,31 +149,37 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ife-NN-qSs">
                                 <rect key="frame" x="57" y="72" width="261" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WK9-rR-G1T">
+                                <rect key="frame" x="16" y="300" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Jgw-rH-35S" firstAttribute="top" secondItem="51p-F0-jsV" secondAttribute="bottom" constant="8" symbolic="YES" id="8XD-vm-fdY"/>
-                            <constraint firstItem="G1k-EQ-tUn" firstAttribute="top" secondItem="Ife-NN-qSs" secondAttribute="bottom" constant="8" symbolic="YES" id="9Cj-Kh-Ian"/>
-                            <constraint firstItem="Ife-NN-qSs" firstAttribute="leading" secondItem="0g7-mQ-q62" secondAttribute="leadingMargin" constant="41" id="Dlq-x0-9Hl"/>
-                            <constraint firstItem="y2Y-xZ-1i5" firstAttribute="top" secondItem="Jgw-rH-35S" secondAttribute="bottom" constant="8" symbolic="YES" id="EIn-Sq-0I6"/>
-                            <constraint firstItem="G1k-EQ-tUn" firstAttribute="leading" secondItem="51p-F0-jsV" secondAttribute="leading" id="Ikf-O2-SxC"/>
-                            <constraint firstItem="y2Y-xZ-1i5" firstAttribute="leading" secondItem="CTg-zU-5dY" secondAttribute="leading" id="JU7-CP-JV3"/>
-                            <constraint firstItem="51p-F0-jsV" firstAttribute="top" secondItem="G1k-EQ-tUn" secondAttribute="bottom" constant="8" symbolic="YES" id="K02-VM-Uv9"/>
-                            <constraint firstItem="Jgw-rH-35S" firstAttribute="leading" secondItem="51p-F0-jsV" secondAttribute="leading" id="Vlb-Sk-Vzc"/>
-                            <constraint firstItem="G1k-EQ-tUn" firstAttribute="trailing" secondItem="51p-F0-jsV" secondAttribute="trailing" id="a1X-b5-SH7"/>
-                            <constraint firstItem="Jgw-rH-35S" firstAttribute="trailing" secondItem="51p-F0-jsV" secondAttribute="trailing" id="aHg-PS-gY9"/>
-                            <constraint firstItem="CTg-zU-5dY" firstAttribute="centerX" secondItem="0g7-mQ-q62" secondAttribute="centerX" id="ent-gC-R4X"/>
-                            <constraint firstItem="y2Y-xZ-1i5" firstAttribute="trailing" secondItem="Jgw-rH-35S" secondAttribute="trailing" id="fhD-Fi-ocf"/>
-                            <constraint firstItem="CTg-zU-5dY" firstAttribute="top" secondItem="y2Y-xZ-1i5" secondAttribute="bottom" constant="8" symbolic="YES" id="hIo-Gd-QWs"/>
-                            <constraint firstItem="G1k-EQ-tUn" firstAttribute="trailing" secondItem="Ife-NN-qSs" secondAttribute="trailing" id="iix-Fu-nKH"/>
-                            <constraint firstItem="fHP-Mb-vJR" firstAttribute="top" secondItem="CTg-zU-5dY" secondAttribute="bottom" constant="8" symbolic="YES" id="jia-Ed-1wa"/>
-                            <constraint firstItem="CTg-zU-5dY" firstAttribute="centerX" secondItem="fHP-Mb-vJR" secondAttribute="centerX" id="lBo-ml-iWW"/>
-                            <constraint firstItem="Jgw-rH-35S" firstAttribute="leading" secondItem="y2Y-xZ-1i5" secondAttribute="leading" id="qsJ-27-LKm"/>
-                            <constraint firstItem="Ife-NN-qSs" firstAttribute="leading" secondItem="G1k-EQ-tUn" secondAttribute="leading" id="uLi-Rs-igz"/>
-                            <constraint firstItem="Ife-NN-qSs" firstAttribute="top" secondItem="4mh-vW-oVV" secondAttribute="bottom" constant="8" symbolic="YES" id="zOe-YI-RDG"/>
-                            <constraint firstItem="CTg-zU-5dY" firstAttribute="trailing" secondItem="y2Y-xZ-1i5" secondAttribute="trailing" id="zkc-QS-Tvv"/>
+                            <constraint firstItem="G1k-EQ-tUn" firstAttribute="top" secondItem="Ife-NN-qSs" secondAttribute="bottom" constant="8" symbolic="YES" id="3JT-RD-yUL"/>
+                            <constraint firstItem="51p-F0-jsV" firstAttribute="trailing" secondItem="Jgw-rH-35S" secondAttribute="trailing" id="4zG-ti-iHc"/>
+                            <constraint firstItem="G1k-EQ-tUn" firstAttribute="trailing" secondItem="51p-F0-jsV" secondAttribute="trailing" id="Afa-HU-G0U"/>
+                            <constraint firstItem="fHP-Mb-vJR" firstAttribute="trailing" secondItem="Jgw-rH-35S" secondAttribute="trailing" id="BAQ-WR-7M1"/>
+                            <constraint firstItem="CTg-zU-5dY" firstAttribute="leading" secondItem="y2Y-xZ-1i5" secondAttribute="leading" id="G5q-IL-fKp"/>
+                            <constraint firstItem="fHP-Mb-vJR" firstAttribute="leading" secondItem="y2Y-xZ-1i5" secondAttribute="trailing" constant="8" symbolic="YES" id="JBo-oy-gRi"/>
+                            <constraint firstItem="Ife-NN-qSs" firstAttribute="leading" secondItem="0g7-mQ-q62" secondAttribute="leadingMargin" constant="41" id="Jeu-eH-vnW"/>
+                            <constraint firstItem="Jgw-rH-35S" firstAttribute="leading" secondItem="y2Y-xZ-1i5" secondAttribute="leading" id="NWa-hj-wYe"/>
+                            <constraint firstItem="y2Y-xZ-1i5" firstAttribute="top" secondItem="Jgw-rH-35S" secondAttribute="bottom" constant="8" symbolic="YES" id="ZLA-XE-pFN"/>
+                            <constraint firstItem="G1k-EQ-tUn" firstAttribute="leading" secondItem="Ife-NN-qSs" secondAttribute="leading" id="e2Y-Zx-eVv"/>
+                            <constraint firstItem="Ife-NN-qSs" firstAttribute="trailing" secondItem="G1k-EQ-tUn" secondAttribute="trailing" id="h8k-Bh-Vwd"/>
+                            <constraint firstItem="Jgw-rH-35S" firstAttribute="top" secondItem="51p-F0-jsV" secondAttribute="bottom" constant="8" symbolic="YES" id="h9P-YM-ix9"/>
+                            <constraint firstItem="Ife-NN-qSs" firstAttribute="centerX" secondItem="0g7-mQ-q62" secondAttribute="centerX" id="iRG-h5-8VG"/>
+                            <constraint firstItem="51p-F0-jsV" firstAttribute="leading" secondItem="Jgw-rH-35S" secondAttribute="leading" id="k1U-dk-QPu"/>
+                            <constraint firstItem="CTg-zU-5dY" firstAttribute="trailing" secondItem="fHP-Mb-vJR" secondAttribute="trailing" id="k2d-0p-5Uh"/>
+                            <constraint firstItem="G1k-EQ-tUn" firstAttribute="leading" secondItem="51p-F0-jsV" secondAttribute="leading" id="kZE-rb-5j0"/>
+                            <constraint firstItem="CTg-zU-5dY" firstAttribute="top" secondItem="y2Y-xZ-1i5" secondAttribute="bottom" constant="8" symbolic="YES" id="nz6-7T-Gt5"/>
+                            <constraint firstItem="Ife-NN-qSs" firstAttribute="top" secondItem="4mh-vW-oVV" secondAttribute="bottom" constant="8" symbolic="YES" id="pKo-Ph-zHg"/>
+                            <constraint firstItem="y2Y-xZ-1i5" firstAttribute="centerY" secondItem="fHP-Mb-vJR" secondAttribute="centerY" id="pSa-Tn-TRU"/>
+                            <constraint firstItem="51p-F0-jsV" firstAttribute="top" secondItem="G1k-EQ-tUn" secondAttribute="bottom" constant="8" symbolic="YES" id="zhX-ZH-6SJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kUZ-cy-2Ub">
@@ -182,8 +188,22 @@
                                 <segue destination="FeU-jg-9HA" kind="unwind" unwindAction="unwindToLogin:" id="NZO-67-ycz"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Sign Up" id="9Jw-bn-mZJ">
+                            <connections>
+                                <action selector="signupPressed:" destination="3Re-Da-iVZ" id="Iga-jw-3ac"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="Label_Error" destination="WK9-rR-G1T" id="u7r-YS-70f"/>
+                        <outlet property="TextField_Age" destination="y2Y-xZ-1i5" id="aX4-5F-foF"/>
+                        <outlet property="TextField_ConfirmPassword" destination="Jgw-rH-35S" id="k8K-dY-KJh"/>
+                        <outlet property="TextField_Email" destination="G1k-EQ-tUn" id="H4y-hx-tNa"/>
+                        <outlet property="TextField_FirstName" destination="Ife-NN-qSs" id="i4J-Tu-0Wr"/>
+                        <outlet property="TextField_Password" destination="51p-F0-jsV" id="zgs-WX-JRb"/>
+                        <outlet property="TextField_Weight" destination="CTg-zU-5dY" id="kos-j2-w9a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1P5-xf-rX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FeU-jg-9HA" userLabel="Exit" sceneMemberID="exit"/>

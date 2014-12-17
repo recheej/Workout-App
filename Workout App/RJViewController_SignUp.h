@@ -10,4 +10,19 @@
 
 @interface RJViewController_SignUp : UIViewController
 //TODO: Attach textboxes to textfields. Verification, blah blah
+
+@property (strong, nonatomic) IBOutlet UITextField *TextField_FirstName;
+
+@property (strong, nonatomic) IBOutlet UITextField *TextField_Email;
+
+@property (strong, nonatomic) IBOutlet UITextField *TextField_Password;
+@property (strong, nonatomic) IBOutlet UITextField *TextField_ConfirmPassword;
+
+@property (strong, nonatomic) IBOutlet UITextField *TextField_Age;
+
+@property (strong, nonatomic) IBOutlet UITextField *TextField_Weight;
+
+- (IBAction)signupPressed:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UILabel *Label_Error;
 @end
