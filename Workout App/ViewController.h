@@ -10,6 +10,23 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *TextField_Email;
+
+@property (strong, nonatomic) IBOutlet UITextField *TextField_Password;
+
+@property (strong, nonatomic) IBOutlet UIButton *Button_Login;
+- (IBAction)loginPressed:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *Button_SignUp;
+- (IBAction)signupPressed:(id)sender;
+
+- (IBAction)viewTapped:(id)sender;
+
+
+
+- (IBAction)unwindToLogin:(UIStoryboardSegue *)segue;
+
+
 
 @end
 

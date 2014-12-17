@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		545ACDD81A41244800754C95 /* RJViewController_SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 545ACDD71A41244800754C95 /* RJViewController_SignUp.m */; };
 		54D05F651A410D110007C335 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F641A410D110007C335 /* main.m */; };
 		54D05F681A410D110007C335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F671A410D110007C335 /* AppDelegate.m */; };
 		54D05F6B1A410D110007C335 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F6A1A410D110007C335 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		545ACDD61A41244800754C95 /* RJViewController_SignUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJViewController_SignUp.h; sourceTree = "<group>"; };
+		545ACDD71A41244800754C95 /* RJViewController_SignUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJViewController_SignUp.m; sourceTree = "<group>"; };
 		54D05F5F1A410D110007C335 /* Workout App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D05F631A410D110007C335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54D05F641A410D110007C335 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 				54D05F6F1A410D110007C335 /* Images.xcassets */,
 				54D05F711A410D110007C335 /* LaunchScreen.xib */,
 				54D05F621A410D110007C335 /* Supporting Files */,
+				545ACDD61A41244800754C95 /* RJViewController_SignUp.h */,
+				545ACDD71A41244800754C95 /* RJViewController_SignUp.m */,
 			);
 			path = "Workout App";
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545ACDD81A41244800754C95 /* RJViewController_SignUp.m in Sources */,
 				54D05F6B1A410D110007C335 /* ViewController.m in Sources */,
 				54D05F681A410D110007C335 /* AppDelegate.m in Sources */,
 				54D05F651A410D110007C335 /* main.m in Sources */,
@@ -412,6 +418,7 @@
 				54D05F841A410D110007C335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		54D05F851A410D110007C335 /* Build configuration list for PBXNativeTarget "Workout AppTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +427,7 @@
 				54D05F871A410D110007C335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

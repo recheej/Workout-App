@@ -26,4 +26,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)loginPressed:(id)sender
+{
+    
+}
+- (IBAction)signupPressed:(id)sender
+{
+    
+}
+
+- (IBAction)viewTapped:(id)sender
+{
+    [self.view endEditing:true];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    
+}
+
+- (IBAction)unwindToLogin:(UIStoryboardSegue *)segue
+{
+    NSLog(@"Coming back from sign up");
+}
+
 @end
