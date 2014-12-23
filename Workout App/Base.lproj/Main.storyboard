@@ -215,6 +215,12 @@
                         <outlet property="TextField_FirstName" destination="Ife-NN-qSs" id="i4J-Tu-0Wr"/>
                         <outlet property="TextField_Password" destination="51p-F0-jsV" id="zgs-WX-JRb"/>
                         <outlet property="TextField_Weight" destination="CTg-zU-5dY" id="kos-j2-w9a"/>
+                        <outletCollection property="TextFields" destination="Ife-NN-qSs" id="i8Z-wj-oMu"/>
+                        <outletCollection property="TextFields" destination="G1k-EQ-tUn" id="jb8-dR-fvg"/>
+                        <outletCollection property="TextFields" destination="51p-F0-jsV" id="4vJ-fe-gjV"/>
+                        <outletCollection property="TextFields" destination="Jgw-rH-35S" id="RJQ-Nt-tYg"/>
+                        <outletCollection property="TextFields" destination="y2Y-xZ-1i5" id="5wX-eU-VsA"/>
+                        <outletCollection property="TextFields" destination="CTg-zU-5dY" id="Fnj-f7-OM3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1P5-xf-rX3" userLabel="First Responder" sceneMemberID="firstResponder"/>

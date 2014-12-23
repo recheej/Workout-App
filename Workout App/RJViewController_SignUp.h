@@ -27,4 +27,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *Label_Error;
 
+@property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *TextFields;
+
 @end
