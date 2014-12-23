@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="User" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" minValueString="13" maxValueString="120" defaultValueString="0" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="first_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="last_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Integer 16" minValueString="50" maxValueString="999" defaultValueString="0" syncable="YES"/>
+        <fetchedProperty name="user" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="User"/>
+        </fetchedProperty>
+    </entity>
+    <elements>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="194"/>
+    </elements>
+</model>

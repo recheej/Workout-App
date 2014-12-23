@@ -26,6 +26,9 @@
 
 - (IBAction)unwindToLogin:(UIStoryboardSegue *)segue;
 
+@property (strong, nonatomic) IBOutlet UILabel *Label_Error;
+
+@property BOOL successfulSignup;
 
 
 @end

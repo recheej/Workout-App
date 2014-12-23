@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		545ACDD81A41244800754C95 /* RJViewController_SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 545ACDD71A41244800754C95 /* RJViewController_SignUp.m */; };
+		54A5BD221A48E1C400DCF0F7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54A5BD201A48E1C400DCF0F7 /* Model.xcdatamodeld */; };
+		54A5BD241A48EA4B00DCF0F7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A5BD231A48EA4B00DCF0F7 /* CoreData.framework */; };
 		54D05F651A410D110007C335 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F641A410D110007C335 /* main.m */; };
 		54D05F681A410D110007C335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F671A410D110007C335 /* AppDelegate.m */; };
 		54D05F6B1A410D110007C335 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F6A1A410D110007C335 /* ViewController.m */; };
@@ -15,6 +17,7 @@
 		54D05F701A410D110007C335 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54D05F6F1A410D110007C335 /* Images.xcassets */; };
 		54D05F731A410D110007C335 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D05F711A410D110007C335 /* LaunchScreen.xib */; };
 		54D05F7F1A410D110007C335 /* Workout_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F7E1A410D110007C335 /* Workout_AppTests.m */; };
+		54DC569C1A49E14000204317 /* RJPatternMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DC569B1A49E14000204317 /* RJPatternMatching.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +33,8 @@
 /* Begin PBXFileReference section */
 		545ACDD61A41244800754C95 /* RJViewController_SignUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJViewController_SignUp.h; sourceTree = "<group>"; };
 		545ACDD71A41244800754C95 /* RJViewController_SignUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJViewController_SignUp.m; sourceTree = "<group>"; };
+		54A5BD211A48E1C400DCF0F7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		54A5BD231A48EA4B00DCF0F7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		54D05F5F1A410D110007C335 /* Workout App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D05F631A410D110007C335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54D05F641A410D110007C335 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,6 +48,8 @@
 		54D05F781A410D110007C335 /* Workout AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Workout AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D05F7D1A410D110007C335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54D05F7E1A410D110007C335 /* Workout_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Workout_AppTests.m; sourceTree = "<group>"; };
+		54DC569A1A49E14000204317 /* RJPatternMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJPatternMatching.h; sourceTree = "<group>"; };
+		54DC569B1A49E14000204317 /* RJPatternMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJPatternMatching.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54A5BD241A48EA4B00DCF0F7 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +74,9 @@
 		54D05F561A410D110007C335 = {
 			isa = PBXGroup;
 			children = (
+				54DC569A1A49E14000204317 /* RJPatternMatching.h */,
+				54DC569B1A49E14000204317 /* RJPatternMatching.m */,
+				54A5BD231A48EA4B00DCF0F7 /* CoreData.framework */,
 				54D05F611A410D110007C335 /* Workout App */,
 				54D05F7B1A410D110007C335 /* Workout AppTests */,
 				54D05F601A410D110007C335 /* Products */,
@@ -94,6 +105,7 @@
 				54D05F621A410D110007C335 /* Supporting Files */,
 				545ACDD61A41244800754C95 /* RJViewController_SignUp.h */,
 				545ACDD71A41244800754C95 /* RJViewController_SignUp.m */,
+				54A5BD201A48E1C400DCF0F7 /* Model.xcdatamodeld */,
 			);
 			path = "Workout App";
 			sourceTree = "<group>";
@@ -226,6 +238,8 @@
 			files = (
 				545ACDD81A41244800754C95 /* RJViewController_SignUp.m in Sources */,
 				54D05F6B1A410D110007C335 /* ViewController.m in Sources */,
+				54A5BD221A48E1C400DCF0F7 /* Model.xcdatamodeld in Sources */,
+				54DC569C1A49E14000204317 /* RJPatternMatching.m in Sources */,
 				54D05F681A410D110007C335 /* AppDelegate.m in Sources */,
 				54D05F651A410D110007C335 /* main.m in Sources */,
 			);
@@ -430,6 +444,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		54A5BD201A48E1C400DCF0F7 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				54A5BD211A48E1C400DCF0F7 /* Model.xcdatamodel */,
+			);
+			currentVersion = 54A5BD211A48E1C400DCF0F7 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 54D05F571A410D110007C335 /* Project object */;
 }

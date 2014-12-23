@@ -55,9 +55,15 @@
                                 </state>
                                 <connections>
                                     <action selector="signupPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QO5-ft-NnP"/>
-                                    <segue destination="3Re-Da-iVZ" kind="show" id="QcC-VY-OXx"/>
+                                    <segue destination="3Re-Da-iVZ" kind="show" identifier="" id="QcC-VY-OXx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqP-zo-lTd">
+                                <rect key="frame" x="16" y="276" width="343" height="68"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -80,12 +86,17 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Workout App" id="nDo-Wc-3Wq">
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="rFl-7c-Drf"/>
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="rFl-7c-Drf">
+                            <connections>
+                                <action selector="loginPressed:" destination="vXZ-lx-hvc" id="63O-cY-hoF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="Button_Login" destination="ygQ-IG-0T5" id="1vM-fB-DEB"/>
                         <outlet property="Button_SignUp" destination="bev-wM-eBC" id="MTe-Ok-1Rb"/>
+                        <outlet property="Label_Error" destination="oqP-zo-lTd" id="QKc-UL-c1i"/>
                         <outlet property="TextField_Email" destination="PgS-h2-WHl" id="pWj-Td-E6Z"/>
                         <outlet property="TextField_Password" destination="eqL-5X-o6h" id="Gia-25-sFc"/>
                     </connections>
@@ -185,7 +196,7 @@
                     <navigationItem key="navigationItem" id="kUZ-cy-2Ub">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="h7V-9B-jZJ">
                             <connections>
-                                <segue destination="FeU-jg-9HA" kind="unwind" unwindAction="unwindToLogin:" id="NZO-67-ycz"/>
+                                <segue destination="FeU-jg-9HA" kind="unwind" identifier="toLogin" unwindAction="unwindToLogin:" id="NZO-67-ycz"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Sign Up" id="9Jw-bn-mZJ">
@@ -197,6 +208,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="Label_Error" destination="WK9-rR-G1T" id="u7r-YS-70f"/>
+                        <outlet property="Segment_Male" destination="fHP-Mb-vJR" id="XsF-Cv-NAI"/>
                         <outlet property="TextField_Age" destination="y2Y-xZ-1i5" id="aX4-5F-foF"/>
                         <outlet property="TextField_ConfirmPassword" destination="Jgw-rH-35S" id="k8K-dY-KJh"/>
                         <outlet property="TextField_Email" destination="G1k-EQ-tUn" id="H4y-hx-tNa"/>

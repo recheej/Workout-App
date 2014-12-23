@@ -23,6 +23,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *TextField_Weight;
 
 - (IBAction)signupPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *Segment_Male;
 
 @property (strong, nonatomic) IBOutlet UILabel *Label_Error;
+
 @end
