@@ -72,7 +72,11 @@
     NSError *error = nil;
     NSArray *users = [context executeFetchRequest:request error:&error];
     
-    NSSet *registered = context.registeredObjects;
+    if([users count] == 0)
+    {
+        self.Label_Error.text = @"No account for that e-mail and password found.";
+        return;
+    }
     
     NSManagedObjectContext *userContext = [users firstObject];
 }
