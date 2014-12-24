@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RJViewController_SignUp : UIViewController
+@interface RJViewController_SignUp : UIViewController <UITextFieldDelegate>
 //TODO: Attach textboxes to textfields. Verification, blah blah
 
 @property (strong, nonatomic) IBOutlet UITextField *TextField_FirstName;

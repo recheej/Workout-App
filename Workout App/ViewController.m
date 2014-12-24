@@ -20,6 +20,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.TextField_Email.delegate = self;
+    self.TextField_Password.delegate = self;
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -47,19 +49,27 @@
     return context;
 }
 
-- (IBAction)loginPressed:(id)sender
+- (void) showAlertWithMessage: (NSString *) message title: (NSString *) title
 {
-    if([RJPatternMatching textFieldIsEmpty:self.TextField_Email] || [RJPatternMatching textFieldIsEmpty:self.TextField_Password])
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    
+    [alert show];
+}
+
+- (void) processLogin
+{
+    if(![RJPatternMatching validateTextField:self.TextField_Email pattern:[RJPatternMatching patternEmail]])
     {
-        self.Label_Error.text = @"Both fields are required.";
+        [self showAlertWithMessage:@"Wrong format for email. Try again" title:@""];
         return;
     }
     
-    if(![RJPatternMatching validateTextField:self.TextField_Email pattern:[RJPatternMatching patternEmail]])
+    if([RJPatternMatching textFieldIsEmpty:self.TextField_Email] || [RJPatternMatching textFieldIsEmpty:self.TextField_Password])
     {
-        self.Label_Error.text = @"Wrong format for email. Try again";
+        [self showAlertWithMessage:@"Both fields required" title:@""];
         return;
     }
+    
     
     NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"email like %@ AND password like %@", self.TextField_Email.text, self.TextField_Password.text];
     
@@ -74,11 +84,16 @@
     
     if([users count] == 0)
     {
-        self.Label_Error.text = @"No account for that e-mail and password found.";
+        [self showAlertWithMessage:@"No account for that e-mail and password found." title:@""];
         return;
     }
     
     NSManagedObjectContext *userContext = [users firstObject];
+}
+
+- (IBAction)loginPressed:(id)sender
+{
+    [self processLogin];
 }
 
 - (IBAction)signupPressed:(id)sender
@@ -95,6 +110,21 @@
 {
     
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if(textField == self.TextField_Email)
+    {
+        [self.TextField_Password becomeFirstResponder];
+    }
+    else
+    {
+        [self processLogin];
+    }
+
+    return true;
+}
+
 
 - (IBAction)unwindToLogin:(UIStoryboardSegue *)segue
 {

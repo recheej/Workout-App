@@ -16,6 +16,16 @@
     BOOL success;
 }
 
+- (void) viewDidLoad
+{
+    [super viewDidLoad];
+    
+    for(UITextField *textfield in self.TextFields)
+    {
+        textfield.delegate = self;
+    }
+}
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -121,6 +131,19 @@
         
         [self performSegueWithIdentifier:@"toLogin" sender:self];
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if(textField != self.TextField_Weight)
+    {
+        [textField resignFirstResponder];
+        int textfieldIndex = [self.TextFields indexOfObject:textField];
+        
+        [[self.TextFields objectAtIndex:textfieldIndex + 1] becomeFirstResponder];
+    }
+    
+    return true;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
