@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "RJPatternMatching.h"
 #import <CoreData/CoreData.h>
+#import <Foundation/Foundation.h>
+#import "RJWebServer.h"
 
 @interface ViewController ()
 
@@ -28,8 +30,6 @@
 {
     [super viewWillAppear:animated];
     self.Label_Error.adjustsFontSizeToFitWidth = true;
-    
-    NSLog(@"view did appear");
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,25 +70,19 @@
         return;
     }
     
+    //POST METHOD
     
-    NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"email like %@ AND password like %@", self.TextField_Email.text, self.TextField_Password.text];
+    NSString *userName = self.TextField_Email.text;
+    NSString *password = self.TextField_Password.text;
     
-    NSManagedObjectContext *context = [self managedObjectContext];
+    RJWebServer *server = [[RJWebServer alloc] init];
+    RJUser *user = [server getUserWithUserName:userName password:password];
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
-    
-    request.predicate = searchPredicate;
-    
-    NSError *error = nil;
-    NSArray *users = [context executeFetchRequest:request error:&error];
-    
-    if([users count] == 0)
+    if(!user)
     {
-        [self showAlertWithMessage:@"No account for that e-mail and password found." title:@""];
+        [self showAlertWithMessage:@"That does not belong to any account. Try again." title:@""];
         return;
     }
-    
-    NSManagedObjectContext *userContext = [users firstObject];
 }
 
 - (IBAction)loginPressed:(id)sender
@@ -110,7 +104,7 @@
 {
     
 }
-
+//RJDayFlow
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if(textField == self.TextField_Email)
@@ -132,7 +126,6 @@
     self.Label_Error.text = @"";
     
     //If we get a successful sign up from the sign up view controller, let's display a message to user
-    NSLog(@"coming back from sign up");
     if(self.successfulSignup)
     {
         self.Label_Error.textColor = [UIColor greenColor];

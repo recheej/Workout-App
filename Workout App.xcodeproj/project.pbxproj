@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000433D251E95B4C4B5FBCDA /* libPods-Workout App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 946495AAEC03B5130FBA5A4A /* libPods-Workout App.a */; };
+		540630EE1A4F72AF005F4623 /* RJWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 540630ED1A4F72AF005F4623 /* RJWebServer.m */; };
 		545ACDD81A41244800754C95 /* RJViewController_SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 545ACDD71A41244800754C95 /* RJViewController_SignUp.m */; };
 		54A5BD221A48E1C400DCF0F7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54A5BD201A48E1C400DCF0F7 /* Model.xcdatamodeld */; };
 		54A5BD241A48EA4B00DCF0F7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A5BD231A48EA4B00DCF0F7 /* CoreData.framework */; };
@@ -18,6 +20,9 @@
 		54D05F731A410D110007C335 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D05F711A410D110007C335 /* LaunchScreen.xib */; };
 		54D05F7F1A410D110007C335 /* Workout_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F7E1A410D110007C335 /* Workout_AppTests.m */; };
 		54DC569C1A49E14000204317 /* RJPatternMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DC569B1A49E14000204317 /* RJPatternMatching.m */; };
+		54F538A61A4E4720004F7005 /* RJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F538A51A4E4720004F7005 /* RJUser.m */; };
+		A7AAD2D976DA131A8CF5416C /* libPods-Workout AppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D80A6415087FB3D45B7210E /* libPods-Workout AppTests.a */; };
+		CD8123E0D3F9706D846AC27B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D918DF3EDEA6E26638A08C3B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03A9D5E026693CAE1FAEB3B4 /* Pods-Workout AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Workout AppTests/Pods-Workout AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		540630EC1A4F72AF005F4623 /* RJWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJWebServer.h; sourceTree = "<group>"; };
+		540630ED1A4F72AF005F4623 /* RJWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJWebServer.m; sourceTree = "<group>"; };
 		545ACDD61A41244800754C95 /* RJViewController_SignUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJViewController_SignUp.h; sourceTree = "<group>"; };
 		545ACDD71A41244800754C95 /* RJViewController_SignUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJViewController_SignUp.m; sourceTree = "<group>"; };
 		54A5BD211A48E1C400DCF0F7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -48,8 +56,16 @@
 		54D05F781A410D110007C335 /* Workout AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Workout AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D05F7D1A410D110007C335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54D05F7E1A410D110007C335 /* Workout_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Workout_AppTests.m; sourceTree = "<group>"; };
-		54DC569A1A49E14000204317 /* RJPatternMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJPatternMatching.h; sourceTree = "<group>"; };
-		54DC569B1A49E14000204317 /* RJPatternMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJPatternMatching.m; sourceTree = "<group>"; };
+		54DC569A1A49E14000204317 /* RJPatternMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RJPatternMatching.h; path = ../RJPatternMatching.h; sourceTree = "<group>"; };
+		54DC569B1A49E14000204317 /* RJPatternMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RJPatternMatching.m; path = ../RJPatternMatching.m; sourceTree = "<group>"; };
+		54F538A41A4E4720004F7005 /* RJUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJUser.h; sourceTree = "<group>"; };
+		54F538A51A4E4720004F7005 /* RJUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJUser.m; sourceTree = "<group>"; };
+		6D80A6415087FB3D45B7210E /* libPods-Workout AppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Workout AppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD134C335F70602744056FD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		946495AAEC03B5130FBA5A4A /* libPods-Workout App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Workout App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0B2808FC21A4DAE8D091EE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D7AB5E001755D3A8D32E2CF9 /* Pods-Workout AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Workout AppTests/Pods-Workout AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D918DF3EDEA6E26638A08C3B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				54A5BD241A48EA4B00DCF0F7 /* CoreData.framework in Frameworks */,
+				CD8123E0D3F9706D846AC27B /* libPods.a in Frameworks */,
+				000433D251E95B4C4B5FBCDA /* libPods-Workout App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,21 +83,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7AAD2D976DA131A8CF5416C /* libPods-Workout AppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D9038DBA089B0F1BDBA5BA2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A0B2808FC21A4DAE8D091EE /* Pods.debug.xcconfig */,
+				7FD134C335F70602744056FD /* Pods.release.xcconfig */,
+				D7AB5E001755D3A8D32E2CF9 /* Pods-Workout AppTests.debug.xcconfig */,
+				03A9D5E026693CAE1FAEB3B4 /* Pods-Workout AppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		54D05F561A410D110007C335 = {
 			isa = PBXGroup;
 			children = (
-				54DC569A1A49E14000204317 /* RJPatternMatching.h */,
-				54DC569B1A49E14000204317 /* RJPatternMatching.m */,
 				54A5BD231A48EA4B00DCF0F7 /* CoreData.framework */,
 				54D05F611A410D110007C335 /* Workout App */,
 				54D05F7B1A410D110007C335 /* Workout AppTests */,
 				54D05F601A410D110007C335 /* Products */,
+				3D9038DBA089B0F1BDBA5BA2 /* Pods */,
+				D229DB1CB8137B5BC7BC5443 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +125,8 @@
 		54D05F611A410D110007C335 /* Workout App */ = {
 			isa = PBXGroup;
 			children = (
+				54DC569A1A49E14000204317 /* RJPatternMatching.h */,
+				54DC569B1A49E14000204317 /* RJPatternMatching.m */,
 				54D05F661A410D110007C335 /* AppDelegate.h */,
 				54D05F671A410D110007C335 /* AppDelegate.m */,
 				54D05F691A410D110007C335 /* ViewController.h */,
@@ -106,6 +138,10 @@
 				545ACDD61A41244800754C95 /* RJViewController_SignUp.h */,
 				545ACDD71A41244800754C95 /* RJViewController_SignUp.m */,
 				54A5BD201A48E1C400DCF0F7 /* Model.xcdatamodeld */,
+				54F538A41A4E4720004F7005 /* RJUser.h */,
+				54F538A51A4E4720004F7005 /* RJUser.m */,
+				540630EC1A4F72AF005F4623 /* RJWebServer.h */,
+				540630ED1A4F72AF005F4623 /* RJWebServer.m */,
 			);
 			path = "Workout App";
 			sourceTree = "<group>";
@@ -136,6 +172,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D229DB1CB8137B5BC7BC5443 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D918DF3EDEA6E26638A08C3B /* libPods.a */,
+				946495AAEC03B5130FBA5A4A /* libPods-Workout App.a */,
+				6D80A6415087FB3D45B7210E /* libPods-Workout AppTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,9 +189,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54D05F821A410D110007C335 /* Build configuration list for PBXNativeTarget "Workout App" */;
 			buildPhases = (
+				9F9CD8C470DEBF427437C349 /* Check Pods Manifest.lock */,
 				54D05F5B1A410D110007C335 /* Sources */,
 				54D05F5C1A410D110007C335 /* Frameworks */,
 				54D05F5D1A410D110007C335 /* Resources */,
+				B342703118E9D939951C97AF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,9 +208,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54D05F851A410D110007C335 /* Build configuration list for PBXNativeTarget "Workout AppTests" */;
 			buildPhases = (
+				B0BA9B515C361574909916D7 /* Check Pods Manifest.lock */,
 				54D05F741A410D110007C335 /* Sources */,
 				54D05F751A410D110007C335 /* Frameworks */,
 				54D05F761A410D110007C335 /* Resources */,
+				FCD069AE065474AEA32CE3E4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,12 +281,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9F9CD8C470DEBF427437C349 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B0BA9B515C361574909916D7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B342703118E9D939951C97AF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Workout App/Pods-Workout App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCD069AE065474AEA32CE3E4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Workout AppTests/Pods-Workout AppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		54D05F5B1A410D110007C335 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				545ACDD81A41244800754C95 /* RJViewController_SignUp.m in Sources */,
+				540630EE1A4F72AF005F4623 /* RJWebServer.m in Sources */,
+				54F538A61A4E4720004F7005 /* RJUser.m in Sources */,
 				54D05F6B1A410D110007C335 /* ViewController.m in Sources */,
 				54A5BD221A48E1C400DCF0F7 /* Model.xcdatamodeld in Sources */,
 				54DC569C1A49E14000204317 /* RJPatternMatching.m in Sources */,
@@ -361,6 +476,7 @@
 		};
 		54D05F831A410D110007C335 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A0B2808FC21A4DAE8D091EE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Workout App/Info.plist";
@@ -371,6 +487,7 @@
 		};
 		54D05F841A410D110007C335 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FD134C335F70602744056FD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Workout App/Info.plist";
@@ -381,6 +498,7 @@
 		};
 		54D05F861A410D110007C335 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7AB5E001755D3A8D32E2CF9 /* Pods-Workout AppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -400,6 +518,7 @@
 		};
 		54D05F871A410D110007C335 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03A9D5E026693CAE1FAEB3B4 /* Pods-Workout AppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

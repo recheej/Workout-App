@@ -103,33 +103,7 @@
     
     if([self validateTextFields])
     {
-        NSManagedObjectContext *context = [self managedObjectContext];
-        
-        NSManagedObject *newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
-        
-        [newUser setValue:self.TextField_FirstName.text forKey:@"first_name"];
-        [newUser setValue:self.TextField_Email.text forKey:@"email"];
-        [newUser setValue:self.TextField_Password.text forKey:@"password"];
-        [newUser setValue: [NSNumber numberWithInt:[self.TextField_Age.text intValue]] forKey:@"age"];
-        [newUser setValue:[NSNumber numberWithInt:[self.TextField_Weight.text intValue]] forKey:@"weight"];
-        
-        BOOL isMale = true;
-        
-        if(self.Segment_Male.selectedSegmentIndex == 1)
-            isMale = false;
-        
-        [newUser setValue:[NSNumber numberWithBool:isMale] forKey:@"gender"];
-        
-        NSError *error = nil;
-        if(![context save: &error])
-        {
-            NSLog(@"Error %@", [error localizedDescription]);
-            self.Label_Error.text = @"Error signing up.";
-        }
-        
-        success = true;
-        
-        [self performSegueWithIdentifier:@"toLogin" sender:self];
+        //Insert into database
     }
 }
 
