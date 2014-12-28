@@ -29,7 +29,6 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.Label_Error.adjustsFontSizeToFitWidth = true;
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,12 +98,7 @@
     [self.view endEditing:true];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue
-                 sender:(id)sender
-{
-    
-}
-//RJDayFlow
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if(textField == self.TextField_Email)
@@ -122,14 +116,10 @@
 
 - (IBAction)unwindToLogin:(UIStoryboardSegue *)segue
 {
-    self.Label_Error.textColor = [UIColor redColor];
-    self.Label_Error.text = @"";
-    
     //If we get a successful sign up from the sign up view controller, let's display a message to user
     if(self.successfulSignup)
     {
-        self.Label_Error.textColor = [UIColor greenColor];
-        self.Label_Error.text = @"Congrats. You have successfully signed up.\nYou may now log in.";
+        [self showAlertWithMessage:@"Congrats. You have successfully signed up.\nYou may now log in." title:@""];
     }
 }
 
