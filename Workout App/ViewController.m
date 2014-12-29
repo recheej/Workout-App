@@ -123,7 +123,7 @@
     //If we get a successful sign up from the sign up view controller, let's display a message to user
     if(self.successfulSignup)
     {
-        [self showAlertWithMessage:@"Congrats. You have successfully signed up.\nYou may now log in." title:@""];
+        [self showAlertWithMessage:@"You have successfully signed up.\nYou may now log in." title:@"Congrats"];
     }
 }
 

@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		000433D251E95B4C4B5FBCDA /* libPods-Workout App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 946495AAEC03B5130FBA5A4A /* libPods-Workout App.a */; };
+		30D6DA277CFEDEE4855FBFC2 /* libPods-Workout App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 946495AAEC03B5130FBA5A4A /* libPods-Workout App.a */; };
 		540630EE1A4F72AF005F4623 /* RJWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 540630ED1A4F72AF005F4623 /* RJWebServer.m */; };
 		545ACDD81A41244800754C95 /* RJViewController_SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 545ACDD71A41244800754C95 /* RJViewController_SignUp.m */; };
 		5487AECF1A50DEAC00232E2F /* RJViewController_Calender.m in Sources */ = {isa = PBXBuildFile; fileRef = 5487AECE1A50DEAC00232E2F /* RJViewController_Calender.m */; };
 		54A5BD221A48E1C400DCF0F7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54A5BD201A48E1C400DCF0F7 /* Model.xcdatamodeld */; };
 		54A5BD241A48EA4B00DCF0F7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A5BD231A48EA4B00DCF0F7 /* CoreData.framework */; };
+		54C33F661A51A06C005BB086 /* RJViewController_AddExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C33F651A51A06C005BB086 /* RJViewController_AddExercise.m */; };
 		54D05F651A410D110007C335 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F641A410D110007C335 /* main.m */; };
 		54D05F681A410D110007C335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F671A410D110007C335 /* AppDelegate.m */; };
 		54D05F6B1A410D110007C335 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F6A1A410D110007C335 /* ViewController.m */; };
@@ -23,7 +24,6 @@
 		54DC569C1A49E14000204317 /* RJPatternMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DC569B1A49E14000204317 /* RJPatternMatching.m */; };
 		54F538A61A4E4720004F7005 /* RJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F538A51A4E4720004F7005 /* RJUser.m */; };
 		A7AAD2D976DA131A8CF5416C /* libPods-Workout AppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D80A6415087FB3D45B7210E /* libPods-Workout AppTests.a */; };
-		CD8123E0D3F9706D846AC27B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D918DF3EDEA6E26638A08C3B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		03A9D5E026693CAE1FAEB3B4 /* Pods-Workout AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Workout AppTests/Pods-Workout AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		1BEA12389DD9B7DABD1013F5 /* Pods-Workout App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Workout App/Pods-Workout App.debug.xcconfig"; sourceTree = "<group>"; };
 		540630EC1A4F72AF005F4623 /* RJWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJWebServer.h; sourceTree = "<group>"; };
 		540630ED1A4F72AF005F4623 /* RJWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJWebServer.m; sourceTree = "<group>"; };
 		545ACDD61A41244800754C95 /* RJViewController_SignUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJViewController_SignUp.h; sourceTree = "<group>"; };
@@ -46,6 +47,8 @@
 		5487AECE1A50DEAC00232E2F /* RJViewController_Calender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJViewController_Calender.m; sourceTree = "<group>"; };
 		54A5BD211A48E1C400DCF0F7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		54A5BD231A48EA4B00DCF0F7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		54C33F641A51A06C005BB086 /* RJViewController_AddExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJViewController_AddExercise.h; sourceTree = "<group>"; };
+		54C33F651A51A06C005BB086 /* RJViewController_AddExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJViewController_AddExercise.m; sourceTree = "<group>"; };
 		54D05F5F1A410D110007C335 /* Workout App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D05F631A410D110007C335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54D05F641A410D110007C335 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		9A0B2808FC21A4DAE8D091EE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D7AB5E001755D3A8D32E2CF9 /* Pods-Workout AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Workout AppTests/Pods-Workout AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D918DF3EDEA6E26638A08C3B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F64E23552B48369C1407A2CD /* Pods-Workout App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Workout App/Pods-Workout App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54A5BD241A48EA4B00DCF0F7 /* CoreData.framework in Frameworks */,
-				CD8123E0D3F9706D846AC27B /* libPods.a in Frameworks */,
-				000433D251E95B4C4B5FBCDA /* libPods-Workout App.a in Frameworks */,
+				30D6DA277CFEDEE4855FBFC2 /* libPods-Workout App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +103,8 @@
 				7FD134C335F70602744056FD /* Pods.release.xcconfig */,
 				D7AB5E001755D3A8D32E2CF9 /* Pods-Workout AppTests.debug.xcconfig */,
 				03A9D5E026693CAE1FAEB3B4 /* Pods-Workout AppTests.release.xcconfig */,
+				1BEA12389DD9B7DABD1013F5 /* Pods-Workout App.debug.xcconfig */,
+				F64E23552B48369C1407A2CD /* Pods-Workout App.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -113,6 +118,8 @@
 				545ACDD71A41244800754C95 /* RJViewController_SignUp.m */,
 				54D05F691A410D110007C335 /* ViewController.h */,
 				54D05F6A1A410D110007C335 /* ViewController.m */,
+				54C33F641A51A06C005BB086 /* RJViewController_AddExercise.h */,
+				54C33F651A51A06C005BB086 /* RJViewController_AddExercise.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -364,6 +371,7 @@
 			files = (
 				545ACDD81A41244800754C95 /* RJViewController_SignUp.m in Sources */,
 				540630EE1A4F72AF005F4623 /* RJWebServer.m in Sources */,
+				54C33F661A51A06C005BB086 /* RJViewController_AddExercise.m in Sources */,
 				54F538A61A4E4720004F7005 /* RJUser.m in Sources */,
 				5487AECF1A50DEAC00232E2F /* RJViewController_Calender.m in Sources */,
 				54D05F6B1A410D110007C335 /* ViewController.m in Sources */,
@@ -490,7 +498,7 @@
 		};
 		54D05F831A410D110007C335 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A0B2808FC21A4DAE8D091EE /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 1BEA12389DD9B7DABD1013F5 /* Pods-Workout App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Workout App/Info.plist";
@@ -501,7 +509,7 @@
 		};
 		54D05F841A410D110007C335 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FD134C335F70602744056FD /* Pods.release.xcconfig */;
+			baseConfigurationReference = F64E23552B48369C1407A2CD /* Pods-Workout App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Workout App/Info.plist";

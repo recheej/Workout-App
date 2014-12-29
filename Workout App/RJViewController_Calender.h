@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RSDFDatePickerView.h>
 
-@interface RJViewController_Calender : UIViewController
+@interface RJViewController_Calender : UIViewController <RSDFDatePickerViewDataSource, RSDFDatePickerViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *Button_Plus;
+- (IBAction)buttonPlusTapped:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 @end
