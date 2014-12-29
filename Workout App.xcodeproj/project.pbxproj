@@ -10,6 +10,7 @@
 		000433D251E95B4C4B5FBCDA /* libPods-Workout App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 946495AAEC03B5130FBA5A4A /* libPods-Workout App.a */; };
 		540630EE1A4F72AF005F4623 /* RJWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 540630ED1A4F72AF005F4623 /* RJWebServer.m */; };
 		545ACDD81A41244800754C95 /* RJViewController_SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 545ACDD71A41244800754C95 /* RJViewController_SignUp.m */; };
+		5487AECF1A50DEAC00232E2F /* RJViewController_Calender.m in Sources */ = {isa = PBXBuildFile; fileRef = 5487AECE1A50DEAC00232E2F /* RJViewController_Calender.m */; };
 		54A5BD221A48E1C400DCF0F7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54A5BD201A48E1C400DCF0F7 /* Model.xcdatamodeld */; };
 		54A5BD241A48EA4B00DCF0F7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A5BD231A48EA4B00DCF0F7 /* CoreData.framework */; };
 		54D05F651A410D110007C335 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F641A410D110007C335 /* main.m */; };
@@ -41,6 +42,8 @@
 		540630ED1A4F72AF005F4623 /* RJWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJWebServer.m; sourceTree = "<group>"; };
 		545ACDD61A41244800754C95 /* RJViewController_SignUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJViewController_SignUp.h; sourceTree = "<group>"; };
 		545ACDD71A41244800754C95 /* RJViewController_SignUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJViewController_SignUp.m; sourceTree = "<group>"; };
+		5487AECD1A50DEAC00232E2F /* RJViewController_Calender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJViewController_Calender.h; sourceTree = "<group>"; };
+		5487AECE1A50DEAC00232E2F /* RJViewController_Calender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJViewController_Calender.m; sourceTree = "<group>"; };
 		54A5BD211A48E1C400DCF0F7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		54A5BD231A48EA4B00DCF0F7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		54D05F5F1A410D110007C335 /* Workout App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +104,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5487AED01A50DEB900232E2F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5487AECD1A50DEAC00232E2F /* RJViewController_Calender.h */,
+				5487AECE1A50DEAC00232E2F /* RJViewController_Calender.m */,
+				545ACDD61A41244800754C95 /* RJViewController_SignUp.h */,
+				545ACDD71A41244800754C95 /* RJViewController_SignUp.m */,
+				54D05F691A410D110007C335 /* ViewController.h */,
+				54D05F6A1A410D110007C335 /* ViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		54D05F561A410D110007C335 = {
 			isa = PBXGroup;
 			children = (
@@ -125,18 +141,15 @@
 		54D05F611A410D110007C335 /* Workout App */ = {
 			isa = PBXGroup;
 			children = (
+				5487AED01A50DEB900232E2F /* View Controllers */,
 				54DC569A1A49E14000204317 /* RJPatternMatching.h */,
 				54DC569B1A49E14000204317 /* RJPatternMatching.m */,
 				54D05F661A410D110007C335 /* AppDelegate.h */,
 				54D05F671A410D110007C335 /* AppDelegate.m */,
-				54D05F691A410D110007C335 /* ViewController.h */,
-				54D05F6A1A410D110007C335 /* ViewController.m */,
 				54D05F6C1A410D110007C335 /* Main.storyboard */,
 				54D05F6F1A410D110007C335 /* Images.xcassets */,
 				54D05F711A410D110007C335 /* LaunchScreen.xib */,
 				54D05F621A410D110007C335 /* Supporting Files */,
-				545ACDD61A41244800754C95 /* RJViewController_SignUp.h */,
-				545ACDD71A41244800754C95 /* RJViewController_SignUp.m */,
 				54A5BD201A48E1C400DCF0F7 /* Model.xcdatamodeld */,
 				54F538A41A4E4720004F7005 /* RJUser.h */,
 				54F538A51A4E4720004F7005 /* RJUser.m */,
@@ -352,6 +365,7 @@
 				545ACDD81A41244800754C95 /* RJViewController_SignUp.m in Sources */,
 				540630EE1A4F72AF005F4623 /* RJWebServer.m in Sources */,
 				54F538A61A4E4720004F7005 /* RJUser.m in Sources */,
+				5487AECF1A50DEAC00232E2F /* RJViewController_Calender.m in Sources */,
 				54D05F6B1A410D110007C335 /* ViewController.m in Sources */,
 				54A5BD221A48E1C400DCF0F7 /* Model.xcdatamodeld in Sources */,
 				54DC569C1A49E14000204317 /* RJPatternMatching.m in Sources */,

@@ -17,4 +17,6 @@
 
 - (RJUser *) getUserWithUserName: (NSString *) userName password: (NSString *) password;
 
+- (NSString *) makeInsertRequestWithURL: (NSURL *) url body: (NSString *) body;
+
 @end

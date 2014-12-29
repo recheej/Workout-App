@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "RJPatternMatching.h"
 #import "ViewController.h"
+#import "RJWebServer.h"
 
 @implementation RJViewController_SignUp
 {
@@ -38,17 +39,6 @@
 {
     self.Label_Error.hidden = false;
     self.Label_Error.text = errorMessage;
-}
-
-- (NSManagedObjectContext *)managedObjectContext {
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)])
-    {
-        context = [delegate managedObjectContext];
-    }
-    
-    return context;
 }
 
 - (BOOL) validateTextFields
@@ -104,6 +94,27 @@
     if([self validateTextFields])
     {
         //Insert into database
+        NSString *gender = @"M";
+        if(self.Segment_Male.selectedSegmentIndex == 1)
+            gender = @"F";
+        
+        NSString *bodyFormat = @"name=%@&userName=%@&password=%@&age=%@&gender=%@&weight=%@";
+        NSString *httpBody = [NSString stringWithFormat:bodyFormat, self.TextField_FirstName.text, self.TextField_Email.text,
+                              self.TextField_Password.text, self.TextField_Age.text, gender, self.TextField_Weight.text];
+        
+        RJWebServer *server = [[RJWebServer alloc] init];
+        
+        NSURL *insertUserURL = [NSURL URLWithString:@"insert_user.php" relativeToURL:[RJWebServer baseURL]];
+        NSString *errorMessage = [server makeInsertRequestWithURL:insertUserURL body:httpBody];
+        
+        if([errorMessage hasPrefix:@"Duplicate entry"])
+        {
+            [self showError:@"That username is already taken. Please try again."];
+            return;
+        }
+        
+        success = true;
+        [self performSegueWithIdentifier:@"toLogin" sender:self];
     }
 }
 

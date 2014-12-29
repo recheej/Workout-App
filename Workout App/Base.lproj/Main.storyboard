@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Workout App-->
+        <!--Log in-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -82,7 +82,7 @@
                             <outletCollection property="gestureRecognizers" destination="4CS-Yt-KPk" appends="YES" id="EmI-J6-rRw"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Workout App" id="nDo-Wc-3Wq">
+                    <navigationItem key="navigationItem" title="Log in" id="nDo-Wc-3Wq">
                         <barButtonItem key="rightBarButtonItem" title="Login" id="rFl-7c-Drf">
                             <connections>
                                 <action selector="loginPressed:" destination="vXZ-lx-hvc" id="63O-cY-hoF"/>
@@ -104,7 +104,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1317.5" y="274.5"/>
+            <point key="canvasLocation" x="1274.5" y="265.5"/>
         </scene>
         <!--View Controller Sign Up-->
         <scene sceneID="NuE-lJ-tHQ">
@@ -222,7 +222,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1P5-xf-rX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FeU-jg-9HA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1757.5" y="274.5"/>
+            <point key="canvasLocation" x="1697.5" y="265.5"/>
+        </scene>
+        <!--View Controller Calender-->
+        <scene sceneID="Z8C-ub-oJc">
+            <objects>
+                <viewController storyboardIdentifier="Calender" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M9B-w0-bUf" customClass="RJViewController_Calender" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HEs-iX-fRe"/>
+                        <viewControllerLayoutGuide type="bottom" id="kDa-8s-7KJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C6Q-VD-aQX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gmP-pK-Zil"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T0m-mr-bMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2099.5" y="265.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JdC-O0-rsV">

@@ -19,14 +19,36 @@
 - (NSDictionary *) getDictforJson: (NSData *) jsonData
 {
     NSError *error = nil;
-    NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:nil error:&error];
+    id jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:nil error:&error];
     
     if(error)
+    {
+        NSLog([error localizedDescription]);
+        return nil;
+    }
+    
+    if([jsonObjects isKindOfClass:[NSArray class]])
+    {
+        return [ (NSArray *) jsonObjects firstObject];
+    }
+    
+    
+    return (NSDictionary *) jsonObjects;
+}
+
+- (NSString *) makeInsertRequestWithURL: (NSURL *) url body: (NSString *) body
+{
+    NSDictionary *responseDict = [self makePOSTRequestWithURL:url body:body];
+    
+    int success = [[responseDict objectForKey: @"success"] intValue];
+    NSString *error = [responseDict objectForKey:@"error"];
+    
+    if(success == 0 && [error isEqualToString:@""]) //Success in json comes back as string 1 or 0. Let's test that to see if error exists
     {
         return nil;
     }
     
-    return (NSDictionary *) [jsonObjects firstObject];
+    return error;
 }
 
 - (NSDictionary *) makePOSTRequestWithURL: (NSURL *) url body: (NSString *) body
@@ -69,6 +91,7 @@
 {
     RJUser *user = [[RJUser alloc] init];
     
+    id age = [json objectForKeyedSubscript:@"Age"];
     user.userID = [[json objectForKey:@"User_ID"] intValue];
     user.age =  [[json objectForKey:@"Age"] intValue];
     user.firstName = [json objectForKey:@"First_Name"];
@@ -80,6 +103,7 @@
     
     return user;
 }
+
 - (RJUser *) getUserWithUserName: (NSString *) userName password: (NSString *) password
 {
     NSString *parameters = [NSString stringWithFormat:@"userName=%@&password=%@", userName, password];

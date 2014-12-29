@@ -11,6 +11,7 @@
 #import <CoreData/CoreData.h>
 #import <Foundation/Foundation.h>
 #import "RJWebServer.h"
+#import "RJViewController_Calender.h"
 
 @interface ViewController ()
 
@@ -82,6 +83,9 @@
         [self showAlertWithMessage:@"That does not belong to any account. Try again." title:@""];
         return;
     }
+    
+    RJViewController_Calender *calenderViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Calender"];
+    [self.navigationController pushViewController:calenderViewController animated:true];
 }
 
 - (IBAction)loginPressed:(id)sender
