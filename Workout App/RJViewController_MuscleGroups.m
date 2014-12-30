@@ -27,8 +27,6 @@
     self.table_muscleGroups.dataSource = self;
     muscleGroups = @[@"Back", @"Bicep", @"Chest", @"Core(abs)", @"Legs", @"Shoulder", @"Tricep"];
     
-    self.navigationController.delegate = self;
-    
     self.automaticallyAdjustsScrollViewInsets = false;
 }
 
@@ -44,15 +42,6 @@
     {
         NSLog(@"Muscle groups is going back to exercise");
     }
-}
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    if(viewController == self)
-        return;
-    
-    NSLog(@"Muscle groups navigation showing exercises");
-
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;

@@ -33,7 +33,6 @@
     [self.view addSubview:datePickerView];
     
     self.navigationItem.title = @"Workout Calender";
-    self.navigationItem.rightBarButtonItem = self.Button_Plus;
     
     selectedDate = [self todayWithoutTime];
     

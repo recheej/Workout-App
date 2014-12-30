@@ -19,7 +19,8 @@
     NSArray *testArray;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
@@ -32,8 +33,6 @@
     self.automaticallyAdjustsScrollViewInsets = false;
     
     self.navigationItem.rightBarButtonItem = self.button_save;
-    
-    self.navigationController.delegate = self;
 }
 
 - (UILabel *) rightCellLabel: (UITableViewCell *) cell
@@ -65,6 +64,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    NSLog(@"hello world");
 }
 
 
@@ -176,8 +180,21 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView
+estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
+
 - (IBAction)saveTapped:(id)sender
 {
     
 }
+
 @end

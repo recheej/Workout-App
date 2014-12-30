@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RJViewController_AddExercise : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
+@interface RJViewController_AddExercise : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *label_workoutDate;
 
