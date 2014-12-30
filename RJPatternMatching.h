@@ -19,4 +19,8 @@
 
 + (BOOL) textFieldIsEmpty: (UITextField *) textField;
 
++ (NSString *) friendlyDate: (NSDate *) date;
+
+- (NSString *) sqlDateFormat: (NSDate *) date;
+
 @end

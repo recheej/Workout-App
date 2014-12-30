@@ -8,6 +8,7 @@
 
 #import "RJViewController_Calender.h"
 #import "RJViewController_AddExercise.h"
+#import "RJViewController_PreviousExercises.h"
 
 
 @interface RJViewController_Calender ()
@@ -17,6 +18,8 @@
 @implementation RJViewController_Calender
 {
     NSDate *selectedDate;
+    
+    NSMutableDictionary *markedDates;
 }
 
 - (void)viewDidLoad
@@ -33,6 +36,8 @@
     self.navigationItem.rightBarButtonItem = self.Button_Plus;
     
     selectedDate = [self todayWithoutTime];
+    
+    markedDates = [NSMutableDictionary dictionaryWithCapacity:10];
 }
 
 // Returns YES if the date should be highlighted or NO if it should not.
@@ -47,16 +52,41 @@
     return YES;
 }
 
+- (BOOL) dateIsMarked: (NSDate *) date
+{
+    id  object = [markedDates objectForKey:date];
+    
+    if(object == nil)
+    {
+        return false;
+    }
+    
+    return true;
+}
+
 // Prints out the selected date.
 - (void)datePickerView:(RSDFDatePickerView *)view didSelectDate:(NSDate *)date
 {
     selectedDate = date;
     
-    RJViewController_AddExercise *exerciseController = [self.storyboard instantiateViewControllerWithIdentifier:@"AddExercise"];
-    
-    exerciseController.selectedDate = selectedDate;
-    
-    [self.navigationController pushViewController:exerciseController animated:true];
+    if([self dateIsMarked:date])
+    {
+        //If date is marked let's go to previous exercises
+        
+        RJViewController_PreviousExercises *previousController = [self.storyboard instantiateViewControllerWithIdentifier:@"PreviousExercises"];
+        
+        previousController.selectedDate = selectedDate;
+        
+        [self.navigationController pushViewController:previousController animated:true];
+    }
+    else
+    {
+        RJViewController_AddExercise *exerciseController = [self.storyboard instantiateViewControllerWithIdentifier:@"AddExercise"];
+        
+        exerciseController.selectedDate = selectedDate;
+        
+        [self.navigationController pushViewController:exerciseController animated:true];
+    }
 }
 
 - (NSDate *) dateWithoutTime: (NSDate *) date
@@ -78,8 +108,13 @@
 {
     // The date is an `NSDate` object without time components.
     // So, we need to use dates without time components.
+    if([date isEqual:[self todayWithoutTime]])
+    {
+        [markedDates setObject:[NSNumber numberWithBool:true] forKey:date];
+        return true;
+    }
     
-    return [date isEqual:[self todayWithoutTime]];
+    return false;
 }
 
 // Returns YES if all tasks on the date are completed or NO if they are not completed.

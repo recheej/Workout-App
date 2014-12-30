@@ -11,6 +11,7 @@
 		540630EE1A4F72AF005F4623 /* RJWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 540630ED1A4F72AF005F4623 /* RJWebServer.m */; };
 		545ACDD81A41244800754C95 /* RJViewController_SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 545ACDD71A41244800754C95 /* RJViewController_SignUp.m */; };
 		5487AECF1A50DEAC00232E2F /* RJViewController_Calender.m in Sources */ = {isa = PBXBuildFile; fileRef = 5487AECE1A50DEAC00232E2F /* RJViewController_Calender.m */; };
+		548F7DF11A5216FC000E1C17 /* RJViewController_MuscleGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 548F7DF01A5216FC000E1C17 /* RJViewController_MuscleGroups.m */; };
 		54A5BD221A48E1C400DCF0F7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54A5BD201A48E1C400DCF0F7 /* Model.xcdatamodeld */; };
 		54A5BD241A48EA4B00DCF0F7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A5BD231A48EA4B00DCF0F7 /* CoreData.framework */; };
 		54C33F661A51A06C005BB086 /* RJViewController_AddExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C33F651A51A06C005BB086 /* RJViewController_AddExercise.m */; };
@@ -22,6 +23,23 @@
 		54D05F731A410D110007C335 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D05F711A410D110007C335 /* LaunchScreen.xib */; };
 		54D05F7F1A410D110007C335 /* Workout_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F7E1A410D110007C335 /* Workout_AppTests.m */; };
 		54DC569C1A49E14000204317 /* RJPatternMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DC569B1A49E14000204317 /* RJPatternMatching.m */; };
+		54F072E91A51E5E300A9F634 /* RJViewController_PreviousExercises.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F072E81A51E5E300A9F634 /* RJViewController_PreviousExercises.m */; };
+		54F072EE1A51F3D300A9F634 /* Exercise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F072ED1A51F3D300A9F634 /* Exercise.storyboard */; };
+		54F072F21A51FBCE00A9F634 /* RJ_ViewController_AddSets.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F072F11A51FBCE00A9F634 /* RJ_ViewController_AddSets.m */; };
+		54F3D7101A52029D0002F4D5 /* Dips.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54F3D7011A52029D0002F4D5 /* Dips.jpg */; };
+		54F3D7111A52029D0002F4D5 /* Flat Bench Press (Barbell).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54F3D7021A52029D0002F4D5 /* Flat Bench Press (Barbell).jpg */; };
+		54F3D7121A52029D0002F4D5 /* Hammer Curls.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54F3D7031A52029D0002F4D5 /* Hammer Curls.jpg */; };
+		54F3D7131A52029D0002F4D5 /* Heel Touches.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54F3D7041A52029D0002F4D5 /* Heel Touches.jpg */; };
+		54F3D7141A52029D0002F4D5 /* Incline Bench Press (Barbell).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54F3D7051A52029D0002F4D5 /* Incline Bench Press (Barbell).jpg */; };
+		54F3D7151A52029D0002F4D5 /* Kick Backs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54F3D7061A52029D0002F4D5 /* Kick Backs.jpg */; };
+		54F3D7161A52029D0002F4D5 /* Lat Pull Down.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54F3D7071A52029D0002F4D5 /* Lat Pull Down.jpg */; };
+		54F3D7171A52029D0002F4D5 /* Leg Press.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54F3D7081A52029D0002F4D5 /* Leg Press.jpg */; };
+		54F3D7181A52029D0002F4D5 /* Leg Raises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54F3D7091A52029D0002F4D5 /* Leg Raises.jpg */; };
+		54F3D7191A52029D0002F4D5 /* Military Press (Dumbbell).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54F3D70A1A52029D0002F4D5 /* Military Press (Dumbbell).jpg */; };
+		54F3D71A1A52029D0002F4D5 /* Preacher Curl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54F3D70B1A52029D0002F4D5 /* Preacher Curl.jpg */; };
+		54F3D71B1A52029D0002F4D5 /* Rear Deltoid Flyes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54F3D70C1A52029D0002F4D5 /* Rear Deltoid Flyes.jpg */; };
+		54F3D71C1A52029D0002F4D5 /* Seated Cable Row.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54F3D70D1A52029D0002F4D5 /* Seated Cable Row.jpg */; };
+		54F3D71D1A52029D0002F4D5 /* Squats.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54F3D70E1A52029D0002F4D5 /* Squats.jpg */; };
 		54F538A61A4E4720004F7005 /* RJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F538A51A4E4720004F7005 /* RJUser.m */; };
 		A7AAD2D976DA131A8CF5416C /* libPods-Workout AppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D80A6415087FB3D45B7210E /* libPods-Workout AppTests.a */; };
 /* End PBXBuildFile section */
@@ -45,6 +63,8 @@
 		545ACDD71A41244800754C95 /* RJViewController_SignUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJViewController_SignUp.m; sourceTree = "<group>"; };
 		5487AECD1A50DEAC00232E2F /* RJViewController_Calender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJViewController_Calender.h; sourceTree = "<group>"; };
 		5487AECE1A50DEAC00232E2F /* RJViewController_Calender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJViewController_Calender.m; sourceTree = "<group>"; };
+		548F7DEF1A5216FC000E1C17 /* RJViewController_MuscleGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJViewController_MuscleGroups.h; sourceTree = "<group>"; };
+		548F7DF01A5216FC000E1C17 /* RJViewController_MuscleGroups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJViewController_MuscleGroups.m; sourceTree = "<group>"; };
 		54A5BD211A48E1C400DCF0F7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		54A5BD231A48EA4B00DCF0F7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		54C33F641A51A06C005BB086 /* RJViewController_AddExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJViewController_AddExercise.h; sourceTree = "<group>"; };
@@ -64,6 +84,25 @@
 		54D05F7E1A410D110007C335 /* Workout_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Workout_AppTests.m; sourceTree = "<group>"; };
 		54DC569A1A49E14000204317 /* RJPatternMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RJPatternMatching.h; path = ../RJPatternMatching.h; sourceTree = "<group>"; };
 		54DC569B1A49E14000204317 /* RJPatternMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RJPatternMatching.m; path = ../RJPatternMatching.m; sourceTree = "<group>"; };
+		54F072E71A51E5E300A9F634 /* RJViewController_PreviousExercises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJViewController_PreviousExercises.h; sourceTree = "<group>"; };
+		54F072E81A51E5E300A9F634 /* RJViewController_PreviousExercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJViewController_PreviousExercises.m; sourceTree = "<group>"; };
+		54F072ED1A51F3D300A9F634 /* Exercise.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Exercise.storyboard; sourceTree = "<group>"; };
+		54F072F01A51FBCE00A9F634 /* RJ_ViewController_AddSets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJ_ViewController_AddSets.h; sourceTree = "<group>"; };
+		54F072F11A51FBCE00A9F634 /* RJ_ViewController_AddSets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJ_ViewController_AddSets.m; sourceTree = "<group>"; };
+		54F3D7011A52029D0002F4D5 /* Dips.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Dips.jpg; sourceTree = "<group>"; };
+		54F3D7021A52029D0002F4D5 /* Flat Bench Press (Barbell).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Flat Bench Press (Barbell).jpg"; sourceTree = "<group>"; };
+		54F3D7031A52029D0002F4D5 /* Hammer Curls.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Hammer Curls.jpg"; sourceTree = "<group>"; };
+		54F3D7041A52029D0002F4D5 /* Heel Touches.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Heel Touches.jpg"; sourceTree = "<group>"; };
+		54F3D7051A52029D0002F4D5 /* Incline Bench Press (Barbell).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Incline Bench Press (Barbell).jpg"; sourceTree = "<group>"; };
+		54F3D7061A52029D0002F4D5 /* Kick Backs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Kick Backs.jpg"; sourceTree = "<group>"; };
+		54F3D7071A52029D0002F4D5 /* Lat Pull Down.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lat Pull Down.jpg"; sourceTree = "<group>"; };
+		54F3D7081A52029D0002F4D5 /* Leg Press.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Leg Press.jpg"; sourceTree = "<group>"; };
+		54F3D7091A52029D0002F4D5 /* Leg Raises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Leg Raises.jpg"; sourceTree = "<group>"; };
+		54F3D70A1A52029D0002F4D5 /* Military Press (Dumbbell).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Military Press (Dumbbell).jpg"; sourceTree = "<group>"; };
+		54F3D70B1A52029D0002F4D5 /* Preacher Curl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Preacher Curl.jpg"; sourceTree = "<group>"; };
+		54F3D70C1A52029D0002F4D5 /* Rear Deltoid Flyes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Rear Deltoid Flyes.jpg"; sourceTree = "<group>"; };
+		54F3D70D1A52029D0002F4D5 /* Seated Cable Row.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Seated Cable Row.jpg"; sourceTree = "<group>"; };
+		54F3D70E1A52029D0002F4D5 /* Squats.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Squats.jpg; sourceTree = "<group>"; };
 		54F538A41A4E4720004F7005 /* RJUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJUser.h; sourceTree = "<group>"; };
 		54F538A51A4E4720004F7005 /* RJUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJUser.m; sourceTree = "<group>"; };
 		6D80A6415087FB3D45B7210E /* libPods-Workout AppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Workout AppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +159,12 @@
 				54D05F6A1A410D110007C335 /* ViewController.m */,
 				54C33F641A51A06C005BB086 /* RJViewController_AddExercise.h */,
 				54C33F651A51A06C005BB086 /* RJViewController_AddExercise.m */,
+				54F072E71A51E5E300A9F634 /* RJViewController_PreviousExercises.h */,
+				54F072E81A51E5E300A9F634 /* RJViewController_PreviousExercises.m */,
+				54F072F01A51FBCE00A9F634 /* RJ_ViewController_AddSets.h */,
+				54F072F11A51FBCE00A9F634 /* RJ_ViewController_AddSets.m */,
+				548F7DEF1A5216FC000E1C17 /* RJViewController_MuscleGroups.h */,
+				548F7DF01A5216FC000E1C17 /* RJViewController_MuscleGroups.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -127,6 +172,7 @@
 		54D05F561A410D110007C335 = {
 			isa = PBXGroup;
 			children = (
+				54F3D70F1A52029D0002F4D5 /* Workout Photos */,
 				54A5BD231A48EA4B00DCF0F7 /* CoreData.framework */,
 				54D05F611A410D110007C335 /* Workout App */,
 				54D05F7B1A410D110007C335 /* Workout AppTests */,
@@ -148,20 +194,20 @@
 		54D05F611A410D110007C335 /* Workout App */ = {
 			isa = PBXGroup;
 			children = (
-				5487AED01A50DEB900232E2F /* View Controllers */,
-				54DC569A1A49E14000204317 /* RJPatternMatching.h */,
-				54DC569B1A49E14000204317 /* RJPatternMatching.m */,
 				54D05F661A410D110007C335 /* AppDelegate.h */,
 				54D05F671A410D110007C335 /* AppDelegate.m */,
-				54D05F6C1A410D110007C335 /* Main.storyboard */,
 				54D05F6F1A410D110007C335 /* Images.xcassets */,
 				54D05F711A410D110007C335 /* LaunchScreen.xib */,
-				54D05F621A410D110007C335 /* Supporting Files */,
 				54A5BD201A48E1C400DCF0F7 /* Model.xcdatamodeld */,
+				54DC569A1A49E14000204317 /* RJPatternMatching.h */,
+				54DC569B1A49E14000204317 /* RJPatternMatching.m */,
 				54F538A41A4E4720004F7005 /* RJUser.h */,
 				54F538A51A4E4720004F7005 /* RJUser.m */,
 				540630EC1A4F72AF005F4623 /* RJWebServer.h */,
 				540630ED1A4F72AF005F4623 /* RJWebServer.m */,
+				54F072EF1A51F3DF00A9F634 /* Storyboards */,
+				54D05F621A410D110007C335 /* Supporting Files */,
+				5487AED01A50DEB900232E2F /* View Controllers */,
 			);
 			path = "Workout App";
 			sourceTree = "<group>";
@@ -190,6 +236,36 @@
 				54D05F7D1A410D110007C335 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		54F072EF1A51F3DF00A9F634 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				54F072ED1A51F3D300A9F634 /* Exercise.storyboard */,
+				54D05F6C1A410D110007C335 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		54F3D70F1A52029D0002F4D5 /* Workout Photos */ = {
+			isa = PBXGroup;
+			children = (
+				54F3D7011A52029D0002F4D5 /* Dips.jpg */,
+				54F3D7021A52029D0002F4D5 /* Flat Bench Press (Barbell).jpg */,
+				54F3D7031A52029D0002F4D5 /* Hammer Curls.jpg */,
+				54F3D7041A52029D0002F4D5 /* Heel Touches.jpg */,
+				54F3D7051A52029D0002F4D5 /* Incline Bench Press (Barbell).jpg */,
+				54F3D7061A52029D0002F4D5 /* Kick Backs.jpg */,
+				54F3D7071A52029D0002F4D5 /* Lat Pull Down.jpg */,
+				54F3D7081A52029D0002F4D5 /* Leg Press.jpg */,
+				54F3D7091A52029D0002F4D5 /* Leg Raises.jpg */,
+				54F3D70A1A52029D0002F4D5 /* Military Press (Dumbbell).jpg */,
+				54F3D70B1A52029D0002F4D5 /* Preacher Curl.jpg */,
+				54F3D70C1A52029D0002F4D5 /* Rear Deltoid Flyes.jpg */,
+				54F3D70D1A52029D0002F4D5 /* Seated Cable Row.jpg */,
+				54F3D70E1A52029D0002F4D5 /* Squats.jpg */,
+			);
+			path = "Workout Photos";
 			sourceTree = "<group>";
 		};
 		D229DB1CB8137B5BC7BC5443 /* Frameworks */ = {
@@ -286,9 +362,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54F3D71D1A52029D0002F4D5 /* Squats.jpg in Resources */,
+				54F3D7131A52029D0002F4D5 /* Heel Touches.jpg in Resources */,
 				54D05F6E1A410D110007C335 /* Main.storyboard in Resources */,
+				54F3D71C1A52029D0002F4D5 /* Seated Cable Row.jpg in Resources */,
+				54F3D7191A52029D0002F4D5 /* Military Press (Dumbbell).jpg in Resources */,
 				54D05F731A410D110007C335 /* LaunchScreen.xib in Resources */,
+				54F3D71A1A52029D0002F4D5 /* Preacher Curl.jpg in Resources */,
+				54F3D7151A52029D0002F4D5 /* Kick Backs.jpg in Resources */,
+				54F3D7141A52029D0002F4D5 /* Incline Bench Press (Barbell).jpg in Resources */,
+				54F3D71B1A52029D0002F4D5 /* Rear Deltoid Flyes.jpg in Resources */,
+				54F3D7171A52029D0002F4D5 /* Leg Press.jpg in Resources */,
+				54F3D7121A52029D0002F4D5 /* Hammer Curls.jpg in Resources */,
+				54F3D7111A52029D0002F4D5 /* Flat Bench Press (Barbell).jpg in Resources */,
+				54F3D7101A52029D0002F4D5 /* Dips.jpg in Resources */,
+				54F072EE1A51F3D300A9F634 /* Exercise.storyboard in Resources */,
 				54D05F701A410D110007C335 /* Images.xcassets in Resources */,
+				54F3D7161A52029D0002F4D5 /* Lat Pull Down.jpg in Resources */,
+				54F3D7181A52029D0002F4D5 /* Leg Raises.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54F072E91A51E5E300A9F634 /* RJViewController_PreviousExercises.m in Sources */,
 				545ACDD81A41244800754C95 /* RJViewController_SignUp.m in Sources */,
 				540630EE1A4F72AF005F4623 /* RJWebServer.m in Sources */,
 				54C33F661A51A06C005BB086 /* RJViewController_AddExercise.m in Sources */,
@@ -379,6 +471,8 @@
 				54DC569C1A49E14000204317 /* RJPatternMatching.m in Sources */,
 				54D05F681A410D110007C335 /* AppDelegate.m in Sources */,
 				54D05F651A410D110007C335 /* main.m in Sources */,
+				54F072F21A51FBCE00A9F634 /* RJ_ViewController_AddSets.m in Sources */,
+				548F7DF11A5216FC000E1C17 /* RJViewController_MuscleGroups.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

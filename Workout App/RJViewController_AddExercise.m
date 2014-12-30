@@ -7,6 +7,8 @@
 //
 
 #import "RJViewController_AddExercise.h"
+#import "RJPatternMatching.h"
+#import "RJViewController_MuscleGroups.h"
 
 @interface RJViewController_AddExercise ()
 
@@ -21,22 +23,42 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title = @"Add Exercises";
+    self.navigationItem.title = @"Add Exercise";
     
-    self.navigationItem.rightBarButtonItem = self.button_done;
-    
-    NSString *dateFormat = @"E, MMM d yyyy";
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = dateFormat;
-    
-    NSString *dateString = [formatter stringFromDate:self.selectedDate];
-    
-    self.label_workoutDate.text = [NSString stringWithFormat:@"Workout for: %@", dateString];
+    self.label_workoutDate.text = [NSString stringWithFormat:@"Workout for: %@", [RJPatternMatching friendlyDate:self.selectedDate]];
     
     self.table_exercises.delegate = self;
     self.table_exercises.dataSource = self;
+    self.automaticallyAdjustsScrollViewInsets = false;
     
-     testArray = @[@"hello world"];
+    self.navigationItem.rightBarButtonItem = self.button_save;
+    
+    self.navigationController.delegate = self;
+}
+
+- (UILabel *) rightCellLabel: (UITableViewCell *) cell
+{
+    UILabel *rightLabel = (UILabel *) [cell.contentView viewWithTag:1];
+    
+    return rightLabel;
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    if(self.selectedMuscleGroup != nil) //TODO: check if also don't have an exercise
+    {
+        [self.table_exercises deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:false];
+        
+        UITableViewCell *secondCell = [self.table_exercises cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+        
+        [self enableCell:secondCell];
+        
+        UITableViewCell *firstCell = [self.table_exercises cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        
+        UILabel *rightLabel = [self rightCellLabel:firstCell];
+        rightLabel.text = self.selectedMuscleGroup;
+        rightLabel.hidden = false;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,9 +67,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [testArray count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -60,8 +83,45 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    NSString *sectionFormat = [NSString stringWithFormat:@"Exercise #%d", section + 1];
-    return sectionFormat;
+    return @"Exercise";
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    int row = indexPath.row;
+    
+    UIStoryboard *exerciseStoryboard = [UIStoryboard storyboardWithName:@"Exercise" bundle:nil];
+    
+    UITableViewCell *selectedCell = [self.table_exercises cellForRowAtIndexPath:indexPath];
+    
+    RJViewController_MuscleGroups *muscleGroups;
+    
+    switch (row)
+    {
+        case 0:
+            
+            muscleGroups = [exerciseStoryboard instantiateViewControllerWithIdentifier:@"MuscleGroups"];
+            [self.navigationController pushViewController:muscleGroups animated:true];
+            
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void) enableCell: (UITableViewCell *) cell
+{
+    cell.userInteractionEnabled = true;
+    cell.textLabel.enabled = true;
+    cell.detailTextLabel.enabled = true;
+}
+
+- (void) disableCell: (UITableViewCell *) cell
+{
+    cell.userInteractionEnabled = false;
+    cell.textLabel.enabled = false;
+    cell.detailTextLabel.enabled = false;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,10 +138,11 @@
             cellIdentifier = @"Exercise";
             cellText = @"Choose exercise.";
             break;
-        default:
+        case 2:
             
             cellIdentifier = @"Reps";
-            cellText = [NSString stringWithFormat:@"Set #%d", (indexPath.row + 1) - 2];
+            cellText = @"Add sets";
+        default:
             break;
     }
     
@@ -93,12 +154,30 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
+    UILabel *rightLabel;
+    switch (indexPath.row)
+    {
+        case 0:
+            rightLabel = [self rightCellLabel:cell];
+            rightLabel.hidden = true;
+            break;
+        case 1:
+            [self disableCell:cell];
+            break;
+        case 2:
+            [self disableCell:cell];
+            break;
+        default:
+            break;
+    }
+    
     cell.textLabel.text = cellText;
     
     return cell;
 }
 
-
-
-
+- (IBAction)saveTapped:(id)sender
+{
+    
+}
 @end

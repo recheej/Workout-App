@@ -43,4 +43,28 @@
     return [RJPatternMatching stringIsEmpty:textField.text];
 }
 
++ (NSString *) dateFromFormat: (NSString *) dateFormat date: (NSDate *) date
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = dateFormat;
+    
+    NSString *dateString = [formatter stringFromDate:date];
+    
+    return dateString;
+}
+
++ (NSString *) friendlyDate: (NSDate *) date
+{
+    NSString *dateFormat = @"E, MMM d yyyy";
+    
+    return [RJPatternMatching dateFromFormat:dateFormat date:date];
+}
+
+- (NSString *) sqlDateFormat: (NSDate *) date
+{
+    NSString *dateFormat = @"yyyy-mm-dd";
+    
+    return [RJPatternMatching dateFromFormat:dateFormat date:date];
+}
+
 @end
