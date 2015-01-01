@@ -11,7 +11,7 @@
 #import "RJViewController_MuscleGroups.h"
 #import "RJViewController_ChooseExercise.h"
 #import "RJ_ViewController_AddSets.h"
-
+#import "RJExercise.h"
 @interface RJViewController_AddExercise ()
 
 @end
@@ -19,6 +19,7 @@
 @implementation RJViewController_AddExercise
 {
     NSArray *testArray;
+    RJExercise *exercise;
 }
 
 - (void)viewDidLoad
@@ -37,6 +38,10 @@
     self.navigationItem.rightBarButtonItem = self.button_save;
     
     [self.button_save setEnabled:false];
+    
+    exercise = [[RJExercise alloc] init];
+    exercise.user_ID = self.user.userID;
+    exercise.date = [RJPatternMatching sqlDateFormat:self.selectedDate];
 }
 
 - (UILabel *) rightCellLabel: (UITableViewCell *) cell
@@ -90,7 +95,7 @@
             
             [self disableCell:thirdCell];
 
-            self.selectedExercise = nil;
+            self.selectedExerciseName = nil;
             secondRightLabel.text = @"";
             secondRightLabel.hidden = true;
  
@@ -105,14 +110,14 @@
     
     if([self.previousViewController isKindOfClass:[RJViewController_ChooseExercise class]])
     {
-        if(self.selectedExercise == self.oldSelectedExercise)
+        if(self.selectedExerciseName == self.oldSelectedExerciseName)
         {
             return;
         }
         
-        if(self.selectedExercise != nil)
+        if(self.selectedExerciseName != nil)
         {
-            secondRightLabel.text = self.selectedExercise;
+            secondRightLabel.text = self.selectedExerciseName;
             secondRightLabel.hidden = false;
             
             [self.button_save setEnabled:false];
@@ -191,7 +196,7 @@
             
             chooseExercise = [exerciseStoryboard instantiateViewControllerWithIdentifier:@"ChooseExercise"];
             chooseExercise.selectedMuscleGroup = self.selectedMuscleGroup;
-            self.oldSelectedExercise = self.selectedExercise;
+            self.oldSelectedExerciseName = self.selectedExerciseName;
             
             [self.navigationController pushViewController:chooseExercise animated:true];
             
@@ -199,7 +204,7 @@
         case 2:
             
             addSetsController = [exerciseStoryboard instantiateViewControllerWithIdentifier:@"AddSets"];
-            addSetsController.selectedExercise = self.selectedExercise;
+            addSetsController.selectedExercise = self.selectedExerciseName;
             addSetsController.sets = self.selectedSets;
             
             
@@ -295,7 +300,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (IBAction)saveTapped:(id)sender
 {
-    
+    exercise.muscleGroup = self.selectedMuscleGroup;
+    exercise.exerciseName = self.selectedExerciseName;
 }
 
 @end

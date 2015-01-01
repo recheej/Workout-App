@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <RSDFDatePickerView.h>
+#import "RJUser.h"
 
 @interface RJViewController_Calender : UIViewController <RSDFDatePickerViewDataSource, RSDFDatePickerViewDelegate>
+
+@property (nonatomic, strong) RJUser *user;
 
 @end

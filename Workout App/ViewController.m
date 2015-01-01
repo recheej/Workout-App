@@ -85,6 +85,8 @@
     }
     
     RJViewController_Calender *calenderViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Calender"];
+    calenderViewController.user = user;
+    
     [self.navigationController pushViewController:calenderViewController animated:true];
 }
 

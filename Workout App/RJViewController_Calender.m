@@ -83,6 +83,7 @@
         RJViewController_AddExercise *exerciseController = [self.storyboard instantiateViewControllerWithIdentifier:@"AddExercise"];
         
         exerciseController.selectedDate = selectedDate;
+        exerciseController.user = self.user;
         
         [self.navigationController pushViewController:exerciseController animated:true];
     }

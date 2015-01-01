@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RJUser.h"
 
 @interface RJViewController_AddExercise : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
@@ -22,12 +23,13 @@
 @property (strong, nonatomic) NSString *selectedMuscleGroup;
 @property (strong, nonatomic) NSString *oldSelectedGroup;
 
-@property (strong, nonatomic) NSString *selectedExercise;
+@property (strong, nonatomic) NSString *selectedExerciseName;
 
-@property (strong, nonatomic) NSString *oldSelectedExercise;
+@property (strong, nonatomic) NSString *oldSelectedExerciseName;
 
 @property (strong, nonatomic) UIViewController *previousViewController;
 
 @property (strong, nonatomic) NSMutableArray *selectedSets;
 
+@property (strong , nonatomic) RJUser *user;
 @end

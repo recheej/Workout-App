@@ -58,11 +58,11 @@
     
     if(cancelTapped)
     {
-        exerciseViewController.selectedExercise = nil;
+        exerciseViewController.selectedExerciseName = nil;
     }
     else
     {
-        exerciseViewController.selectedExercise = chosenExercise;
+        exerciseViewController.selectedExerciseName = chosenExercise;
     }
     
     [super viewWillDisappear:true];

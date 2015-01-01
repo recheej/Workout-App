@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) NSString *muscleGroup;
 
-@property (strong, nonatomic) NSString *exercise;
+@property (strong, nonatomic) NSString *exerciseName;
 
 @property (strong, nonatomic) NSString *date;
 @end

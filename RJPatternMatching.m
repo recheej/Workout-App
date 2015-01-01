@@ -61,11 +61,13 @@
     return [RJPatternMatching dateFromFormat:dateFormat date:date];
 }
 
-- (NSString *) sqlDateFormat: (NSDate *) date
++ (NSString *) sqlDateFormat: (NSDate *) date
 {
-    NSString *dateFormat = @"yyyy-mm-dd";
+    NSString *dateFormat = @"yyyy-MM-dd";
     
-    return [RJPatternMatching dateFromFormat:dateFormat date:date];
+    NSString *dateString = [RJPatternMatching dateFromFormat:dateFormat date:date];
+    
+    return dateString;
 }
 
 @end
