@@ -20,5 +20,14 @@
 - (IBAction)saveTapped:(id)sender;
 
 @property (strong, nonatomic) NSString *selectedMuscleGroup;
+@property (strong, nonatomic) NSString *oldSelectedGroup;
+
+@property (strong, nonatomic) NSString *selectedExercise;
+
+@property (strong, nonatomic) NSString *oldSelectedExercise;
+
+@property (strong, nonatomic) UIViewController *previousViewController;
+
+@property (strong, nonatomic) NSArray *selectedSets;
 
 @end

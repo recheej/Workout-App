@@ -7,6 +7,7 @@
 //
 
 #import "RJPatternMatching.h"
+#import "RJPatternMatching.h"
 
 @implementation RJPatternMatching
 
@@ -23,7 +24,7 @@
 
 + (NSString *) patternEmail
 {
-    return @"\\S+@\\S+\\.\\S+";
+    return @"\\w+@\\w+\\.\\w+";
 }
 
 + (BOOL) stringIsEmpty:(NSString *)testString

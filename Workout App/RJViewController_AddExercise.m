@@ -9,6 +9,8 @@
 #import "RJViewController_AddExercise.h"
 #import "RJPatternMatching.h"
 #import "RJViewController_MuscleGroups.h"
+#import "RJViewController_ChooseExercise.h"
+#import "RJ_ViewController_AddSets.h"
 
 @interface RJViewController_AddExercise ()
 
@@ -33,6 +35,8 @@
     self.automaticallyAdjustsScrollViewInsets = false;
     
     self.navigationItem.rightBarButtonItem = self.button_save;
+    
+    [self.button_save setEnabled:false];
 }
 
 - (UILabel *) rightCellLabel: (UITableViewCell *) cell
@@ -42,21 +46,90 @@
     return rightLabel;
 }
 
+
 - (void) viewWillAppear:(BOOL)animated
 {
-    if(self.selectedMuscleGroup != nil) //TODO: check if also don't have an exercise
+    if(self.previousViewController == nil)
+        return;
+    
+    NSMutableArray *rightLabels = [NSMutableArray arrayWithCapacity:2];
+    NSMutableArray *cells = [NSMutableArray arrayWithCapacity:3];
+    for(int i = 0; i < 3; i++)
     {
-        [self.table_exercises deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:false];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
         
-        UITableViewCell *secondCell = [self.table_exercises cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+        [self.table_exercises deselectRowAtIndexPath:indexPath animated:false];
         
-        [self enableCell:secondCell];
+        UITableViewCell *cell = [self.table_exercises cellForRowAtIndexPath:indexPath];
+        [cells addObject:cell];
         
-        UITableViewCell *firstCell = [self.table_exercises cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        UILabel *rightLabel = [self rightCellLabel:cell];
+        [rightLabels addObject:rightLabel];
+    }
+    
+    UILabel *firstRightLabel = (UILabel *) [rightLabels objectAtIndex:0];
+    UILabel *secondRightLabel = (UILabel *) [rightLabels objectAtIndex:1];
+    UILabel *thirdRightLabel = (UILabel *) [rightLabels objectAtIndex:2];
+    
+    UITableViewCell *firstCell = (UITableViewCell *) [cells objectAtIndex:0];
+    UITableViewCell *secondCell = (UITableViewCell *) [cells objectAtIndex:1];
+    UITableViewCell *thirdCell = (UITableViewCell *) [cells objectAtIndex:2];
+    
+    if([self.previousViewController isKindOfClass:[RJViewController_MuscleGroups class]])
+    {
+        if(self.selectedMuscleGroup != nil)
+        {
+            if(self.selectedMuscleGroup == self.oldSelectedGroup) //We have the same selected muscle group. We don't have to do an any thing
+            {
+                return;
+            }
+            
+            firstRightLabel.text = self.selectedMuscleGroup;
+            firstRightLabel.hidden = false;
+            
+            if(self.selectedExercise != nil)
+            {
+                self.selectedExercise = nil;
+                secondRightLabel.text = @"";
+                secondRightLabel.hidden = true;
+            }
+            
+            [self enableCell:secondCell];
+        }
+    }
+    
+    if([self.previousViewController isKindOfClass:[RJViewController_ChooseExercise class]])
+    {
+        if(self.selectedExercise == self.oldSelectedExercise)
+        {
+            return;
+        }
         
-        UILabel *rightLabel = [self rightCellLabel:firstCell];
-        rightLabel.text = self.selectedMuscleGroup;
-        rightLabel.hidden = false;
+        if(self.selectedExercise != nil)
+        {
+            secondRightLabel.text = self.selectedExercise;
+            secondRightLabel.hidden = false;
+            
+            
+            if(self.selectedSets != nil)
+            {
+                self.selectedSets = nil;
+                thirdRightLabel.text = @"";
+                thirdRightLabel.hidden = true;
+            }
+            //TODO: Enable third cell
+            [self enableCell:thirdCell];
+        }
+    }
+    
+    if([self.previousViewController isKindOfClass:[RJ_ViewController_AddSets class]])
+    {
+        if(self.selectedSets != nil)
+        {
+            thirdRightLabel.text = [NSString stringWithFormat:@"%d Sets", [self.selectedSets count]];
+            thirdRightLabel.hidden = false;
+            [self.button_save setEnabled:true];
+        }
     }
 }
 
@@ -65,12 +138,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    NSLog(@"hello world");
-}
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -99,16 +166,35 @@
     UITableViewCell *selectedCell = [self.table_exercises cellForRowAtIndexPath:indexPath];
     
     RJViewController_MuscleGroups *muscleGroups;
+    RJViewController_ChooseExercise *chooseExercise;
+    RJ_ViewController_AddSets *addSetsController;
     
     switch (row)
     {
         case 0:
             
             muscleGroups = [exerciseStoryboard instantiateViewControllerWithIdentifier:@"MuscleGroups"];
+            
+            self.oldSelectedGroup = self.selectedMuscleGroup;
+            
             [self.navigationController pushViewController:muscleGroups animated:true];
             
             break;
+        case 1:
             
+            chooseExercise = [exerciseStoryboard instantiateViewControllerWithIdentifier:@"ChooseExercise"];
+            chooseExercise.selectedMuscleGroup = self.selectedMuscleGroup;
+            self.oldSelectedExercise = self.oldSelectedExercise;
+            
+            [self.navigationController pushViewController:chooseExercise animated:true];
+            
+            break;
+        case 2:
+            
+            addSetsController = [exerciseStoryboard instantiateViewControllerWithIdentifier:@"AddSets"];
+            [self.navigationController pushViewController:addSetsController animated:true];
+            
+            break;
         default:
             break;
     }
@@ -136,16 +222,16 @@
     {
         case 0:
             cellIdentifier = @"Cell";
-            cellText = @"Choose muscle group.";
+            cellText = @"Muscle group.";
             break;
         case 1:
             cellIdentifier = @"Exercise";
-            cellText = @"Choose exercise.";
+            cellText = @"Exercise.";
             break;
         case 2:
             
             cellIdentifier = @"Reps";
-            cellText = @"Add sets";
+            cellText = @"Sets";
         default:
             break;
     }
@@ -167,9 +253,13 @@
             break;
         case 1:
             [self disableCell:cell];
+            rightLabel = [self rightCellLabel:cell];
+            rightLabel.hidden = true;
             break;
         case 2:
             [self disableCell:cell];
+            rightLabel = [self rightCellLabel:cell];
+            rightLabel.hidden = true;
             break;
         default:
             break;

@@ -56,6 +56,9 @@
     RJViewController_AddExercise *exerciseViewController = (RJViewController_AddExercise *) [viewControllersOnStack objectAtIndex:numControllersOnStack - 2];
     
     exerciseViewController.selectedMuscleGroup = [muscleGroups objectAtIndex:indexPath.row];
+    exerciseViewController.previousViewController = self;
+    
+    [self.table_muscleGroups deselectRowAtIndexPath:indexPath animated:true];
     
     [self.navigationController popViewControllerAnimated:true];
 }

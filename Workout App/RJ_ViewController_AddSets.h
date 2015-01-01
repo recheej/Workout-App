@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RJ_ViewController_AddSets : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface RJ_ViewController_AddSets : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *table_sets;
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *button_add;
 - (IBAction)addTapped:(id)sender;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *button_back;
+- (IBAction)backTapped:(id)sender;
+
+@property (strong, nonatomic) UIColor *color_errorRed;
 @end
