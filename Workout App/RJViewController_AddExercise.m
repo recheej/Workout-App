@@ -46,7 +46,6 @@
     return rightLabel;
 }
 
-
 - (void) viewWillAppear:(BOOL)animated
 {
     if(self.previousViewController == nil)
@@ -84,15 +83,21 @@
                 return;
             }
             
+            [self.button_save setEnabled:false];
+            
             firstRightLabel.text = self.selectedMuscleGroup;
             firstRightLabel.hidden = false;
             
-            if(self.selectedExercise != nil)
-            {
-                self.selectedExercise = nil;
-                secondRightLabel.text = @"";
-                secondRightLabel.hidden = true;
-            }
+            [self disableCell:thirdCell];
+
+            self.selectedExercise = nil;
+            secondRightLabel.text = @"";
+            secondRightLabel.hidden = true;
+ 
+            
+            self.selectedSets = nil;
+            thirdRightLabel.text = @"";
+            thirdRightLabel.hidden = true;
             
             [self enableCell:secondCell];
         }
@@ -110,13 +115,12 @@
             secondRightLabel.text = self.selectedExercise;
             secondRightLabel.hidden = false;
             
+            [self.button_save setEnabled:false];
+
+            self.selectedSets = nil;
+            thirdRightLabel.text = @"";
+            thirdRightLabel.hidden = true;
             
-            if(self.selectedSets != nil)
-            {
-                self.selectedSets = nil;
-                thirdRightLabel.text = @"";
-                thirdRightLabel.hidden = true;
-            }
             //TODO: Enable third cell
             [self enableCell:thirdCell];
         }
@@ -126,9 +130,12 @@
     {
         if(self.selectedSets != nil)
         {
-            thirdRightLabel.text = [NSString stringWithFormat:@"%d Sets", [self.selectedSets count]];
-            thirdRightLabel.hidden = false;
-            [self.button_save setEnabled:true];
+            if([self.selectedSets count] > 0)
+            {
+                thirdRightLabel.text = [NSString stringWithFormat:@"%d Sets", [self.selectedSets count]];
+                thirdRightLabel.hidden = false;
+                [self.button_save setEnabled:true];
+            }
         }
     }
 }
@@ -184,7 +191,7 @@
             
             chooseExercise = [exerciseStoryboard instantiateViewControllerWithIdentifier:@"ChooseExercise"];
             chooseExercise.selectedMuscleGroup = self.selectedMuscleGroup;
-            self.oldSelectedExercise = self.oldSelectedExercise;
+            self.oldSelectedExercise = self.selectedExercise;
             
             [self.navigationController pushViewController:chooseExercise animated:true];
             
@@ -192,6 +199,10 @@
         case 2:
             
             addSetsController = [exerciseStoryboard instantiateViewControllerWithIdentifier:@"AddSets"];
+            addSetsController.selectedExercise = self.selectedExercise;
+            addSetsController.sets = self.selectedSets;
+            
+            
             [self.navigationController pushViewController:addSetsController animated:true];
             
             break;

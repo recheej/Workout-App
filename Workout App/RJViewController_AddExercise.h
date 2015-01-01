@@ -28,6 +28,6 @@
 
 @property (strong, nonatomic) UIViewController *previousViewController;
 
-@property (strong, nonatomic) NSArray *selectedSets;
+@property (strong, nonatomic) NSMutableArray *selectedSets;
 
 @end

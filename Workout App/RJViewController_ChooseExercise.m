@@ -173,9 +173,22 @@
     checkedIndexPath = indexPath;
 }
 
+- (void) showAlertWithMessage: (NSString *) message title: (NSString *) title
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    
+    [alert show];
+}
+
 
 - (IBAction)buttonDoneTapped:(id)sender
 {
+    if(checkedIndexPath == nil)
+    {
+        [self showAlertWithMessage:@"No exercise was chosen." title:@"Error"];
+        return;
+    }
+    
     [self.navigationController popViewControllerAnimated:true];
 }
 - (IBAction)buttonCancelTapped:(id)sender

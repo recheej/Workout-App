@@ -12,8 +12,6 @@
 
 @property int setID;
 
-@property int setNumber;
-
 @property int workoutID;
 
 @property int reps;
