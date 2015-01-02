@@ -21,6 +21,12 @@
 
 + (NSString *) friendlyDate: (NSDate *) date;
 
-+ (NSString *) sqlDateFormat: (NSDate *) date;
++ (NSString *) sqlDateFromDate: (NSDate *) date;
+
++ (NSString *) sqlDateFormat;
+
++ (NSString *) dayFlowFormat;
+
++ (NSString  *) sqlDateStringToDayFlowString: (NSString *) sqlDateString;
 
 @end

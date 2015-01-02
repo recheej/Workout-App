@@ -12,6 +12,10 @@
 #import "RJViewController_ChooseExercise.h"
 #import "RJ_ViewController_AddSets.h"
 #import "RJExercise.h"
+#import "RJWebServer.h"
+#import "RJSet.h"
+#import "RJViewController_Calender.h"
+
 @interface RJViewController_AddExercise ()
 
 @end
@@ -41,7 +45,16 @@
     
     exercise = [[RJExercise alloc] init];
     exercise.user_ID = self.user.userID;
-    exercise.date = [RJPatternMatching sqlDateFormat:self.selectedDate];
+    exercise.workout_date = self.selectedDate;
+    
+    NSArray *viewControllersOnStack = self.navigationController.viewControllers;
+    
+    if([self.previousViewController isKindOfClass:[RJViewController_Calender class]])
+    {
+         NSArray *newStack = [NSArray arrayWithObjects:[viewControllersOnStack objectAtIndex:0], self, nil];
+        
+        [self.navigationController setViewControllers:newStack];
+    }
 }
 
 - (UILabel *) rightCellLabel: (UITableViewCell *) cell
@@ -298,10 +311,63 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     return 44;
 }
 
+- (void) showAlertWithMessage: (NSString *) message title: (NSString *) title
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    
+    [alert show];
+}
+
+- (void) showDatabaseError
+{
+    [self showAlertWithMessage:@"Error processing request. Please contact administrator" title:@"Critical Error"];
+}
+
 - (IBAction)saveTapped:(id)sender
 {
     exercise.muscleGroup = self.selectedMuscleGroup;
     exercise.exerciseName = self.selectedExerciseName;
+    
+    //name=%@&userName=%@&password=%@&age=%@&gender=%@&weight=%@
+    
+    NSString *bodyFormat = @"userID=%d&muscleGroup=%@&exerciseName=%@&date=%@";
+    
+    NSString *body = [NSString stringWithFormat:bodyFormat, exercise.user_ID, exercise.muscleGroup,
+                      exercise.exerciseName, [RJPatternMatching sqlDateFromDate:exercise.workout_date]];
+    
+    RJWebServer *webServer = [[RJWebServer alloc]init];
+    
+    NSDictionary *result = [webServer makePOSTRequestWithFileName:@"insert_exercise.php" body:body];
+    
+    if([result objectForKey:@"success"] != nil)
+    {
+        [self showDatabaseError];
+        return;
+    }
+    
+    NSString *exerciseIDString = [result objectForKey:@"Exercise_ID"];
+    
+    exercise.exerciseID = [exerciseIDString intValue];
+    
+    for(RJSet *set in self.selectedSets)
+    {
+        bodyFormat = @"exerciseID=%d&numReps=%d&weight=%d";
+        
+        body = [NSString stringWithFormat:bodyFormat, exercise.exerciseID, set.reps, set.weight];
+        
+        NSString *error = [webServer makeInsertRequestWithFileName:@"insert_set.php" body:body];
+        
+        if(![error isEqualToString:@""])
+        {
+            [self showDatabaseError];
+            return;
+        }
+    }
+    
+    RJViewController_Calender *calenderViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Calender"];
+    calenderViewController.user = self.user;
+    
+    [self.navigationController pushViewController:calenderViewController animated:true];
 }
 
 @end

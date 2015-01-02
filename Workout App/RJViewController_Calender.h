@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) RJUser *user;
 
+@property (nonatomic, strong) UIViewController *previousViewController;
+
 @end

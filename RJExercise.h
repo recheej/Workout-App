@@ -10,7 +10,7 @@
 
 @interface RJExercise : NSObject
 
-@property int workoutID;
+@property int exerciseID;
 
 @property int user_ID;
 
@@ -18,5 +18,6 @@
 
 @property (strong, nonatomic) NSString *exerciseName;
 
-@property (strong, nonatomic) NSString *date;
+@property (strong, nonatomic) NSDate *workout_date;
+
 @end

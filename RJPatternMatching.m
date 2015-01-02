@@ -61,9 +61,32 @@
     return [RJPatternMatching dateFromFormat:dateFormat date:date];
 }
 
-+ (NSString *) sqlDateFormat: (NSDate *) date
++ (NSString *) dayFlowFormat
 {
-    NSString *dateFormat = @"yyyy-MM-dd";
+    return @"yyyy-dd-MM";
+}
+
++ (NSString *) sqlDateFormat
+{
+    return @"yyyy-MM-dd";
+}
+
++ (NSString  *) sqlDateStringToDayFlowString: (NSString *) sqlDateString
+{
+    NSArray *components = [sqlDateString componentsSeparatedByString:@"-"];
+    
+    NSString *yearComponent = [components objectAtIndex:0];
+    
+    NSString *monthComponent = [components objectAtIndex:1];
+    
+    NSString *dayComponent = [components objectAtIndex:2];
+    
+    return [NSString stringWithFormat: @"%@-%@-%@", yearComponent, dayComponent, monthComponent];
+}
+
++ (NSString *) sqlDateFromDate: (NSDate *) date
+{
+    NSString *dateFormat = [RJPatternMatching sqlDateFormat];
     
     NSString *dateString = [RJPatternMatching dateFromFormat:dateFormat date:date];
     

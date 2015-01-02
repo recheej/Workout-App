@@ -103,9 +103,8 @@
                               self.TextField_Password.text, self.TextField_Age.text, gender, self.TextField_Weight.text];
         
         RJWebServer *server = [[RJWebServer alloc] init];
-        
-        NSURL *insertUserURL = [NSURL URLWithString:@"insert_user.php" relativeToURL:[RJWebServer baseURL]];
-        NSString *errorMessage = [server makeInsertRequestWithURL:insertUserURL body:httpBody];
+
+        NSString *errorMessage = [server makeInsertRequestWithFileName:@"insert_user.php" body:httpBody];
         
         if([errorMessage hasPrefix:@"Duplicate entry"])
         {

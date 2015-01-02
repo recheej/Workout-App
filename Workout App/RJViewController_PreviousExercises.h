@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RJUser.h"
 
 @interface RJViewController_PreviousExercises : UIViewController
 
@@ -15,5 +16,10 @@
 @property (strong, nonatomic) NSDate *selectedDate;
 
 @property (strong, nonatomic) IBOutlet UITableView *table_previousWorkouts;
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *button_back;
+- (IBAction)backTapped:(id)sender;
+
+@property (strong, nonatomic) RJUser *user;
 
 @end

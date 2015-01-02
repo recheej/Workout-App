@@ -8,6 +8,7 @@
 
 #import "RJViewController_PreviousExercises.h"
 #import "RJPatternMatching.h"
+#import "RJViewController_Calender.h"
 
 @interface RJViewController_PreviousExercises ()
 
@@ -22,6 +23,13 @@
     
     self.navigationItem.title = @"Previous Exercises";
     self.label_workout_date.text = [NSString stringWithFormat:@"Workout from %@", [RJPatternMatching friendlyDate:self.selectedDate]];
+    
+    NSArray *viewControllersOnStack = self.navigationController.viewControllers;
+    
+    NSArray *newStack = [NSArray arrayWithObjects:[viewControllersOnStack objectAtIndex:0], self, nil];
+    [self.navigationController setViewControllers:newStack];
+    
+    self.navigationItem.leftBarButtonItem = self.button_back;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,4 +47,12 @@
 }
 */
 
+- (IBAction)backTapped:(id)sender
+{
+    RJViewController_Calender *calenderViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Calender"];
+    calenderViewController.user = self.user;
+    calenderViewController.previousViewController = self;
+    
+    [self.navigationController pushViewController:calenderViewController animated:true];
+}
 @end

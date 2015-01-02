@@ -13,10 +13,14 @@
 
 + (NSURL *) baseURL;
 
-- (NSDictionary *) makePOSTRequestWithURL: (NSURL *) url body: (NSString *) body;
+- (NSArray *) makePOSTRequestWithFileName: (NSString *) fileName body: (NSString *) body;
+
+- (NSDictionary *) allDatesForUser: (RJUser *) user;
 
 - (RJUser *) getUserWithUserName: (NSString *) userName password: (NSString *) password;
 
-- (NSString *) makeInsertRequestWithURL: (NSURL *) url body: (NSString *) body;
+- (NSString *) makeInsertRequestWithFileName: (NSString *) fileName body: (NSString *) body;
+
+- (NSString *) parseSuccessJson: (NSDictionary *) successJson;
 
 @end

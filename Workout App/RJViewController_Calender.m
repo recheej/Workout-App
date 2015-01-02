@@ -9,6 +9,7 @@
 #import "RJViewController_Calender.h"
 #import "RJViewController_AddExercise.h"
 #import "RJViewController_PreviousExercises.h"
+#import "RJWebServer.h"
 
 
 @interface RJViewController_Calender ()
@@ -19,7 +20,9 @@
 {
     NSDate *selectedDate;
     
-    NSMutableDictionary *markedDates;
+    NSDictionary *markableDates;
+    
+    RJWebServer *server;
 }
 
 - (void)viewDidLoad
@@ -36,7 +39,21 @@
     
     selectedDate = [self todayWithoutTime];
     
-    markedDates = [NSMutableDictionary dictionaryWithCapacity:10];
+    server = [[RJWebServer alloc] init];
+    
+    if([self.previousViewController isKindOfClass:[RJViewController_PreviousExercises class]])
+    {
+        self.navigationItem.hidesBackButton = true;
+    }
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSString *body = [NSString stringWithFormat:@"userID=%d", self.user.userID];
+    
+    markableDates = [server allDatesForUser:self.user];
 }
 
 // Returns YES if the date should be highlighted or NO if it should not.
@@ -53,14 +70,12 @@
 
 - (BOOL) dateIsMarked: (NSDate *) date
 {
-    id  object = [markedDates objectForKey:date];
-    
-    if(object == nil)
+    if([markableDates objectForKey:[date description]] != nil)
     {
-        return false;
+        return true;
     }
     
-    return true;
+    return false;
 }
 
 // Prints out the selected date.
@@ -75,6 +90,7 @@
         RJViewController_PreviousExercises *previousController = [self.storyboard instantiateViewControllerWithIdentifier:@"PreviousExercises"];
         
         previousController.selectedDate = selectedDate;
+        previousController.user = self.user;
         
         [self.navigationController pushViewController:previousController animated:true];
     }
@@ -84,6 +100,7 @@
         
         exerciseController.selectedDate = selectedDate;
         exerciseController.user = self.user;
+        exerciseController.previousViewController = self;
         
         [self.navigationController pushViewController:exerciseController animated:true];
     }
@@ -108,9 +125,8 @@
 {
     // The date is an `NSDate` object without time components.
     // So, we need to use dates without time components.
-    if([date isEqual:[self todayWithoutTime]])
+    if([date isEqual:[self todayWithoutTime]] || [self dateIsMarked:date])
     {
-        [markedDates setObject:[NSNumber numberWithBool:true] forKey:date];
         return true;
     }
     

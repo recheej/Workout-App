@@ -7,6 +7,7 @@
 //
 
 #import "RJWebServer.h"
+#import "RJPatternMatching.h"
 
 
 @implementation RJWebServer
@@ -16,7 +17,7 @@
     return [NSURL URLWithString:@"http://ec2-54-148-233-70.us-west-2.compute.amazonaws.com/"];
 }
 
-- (NSDictionary *) getDictforJson: (NSData *) jsonData
+- (NSArray *) jsonResults: (NSData *) jsonData
 {
     NSError *error = nil;
     id jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:nil error:&error];
@@ -27,21 +28,13 @@
         return nil;
     }
     
-    if([jsonObjects isKindOfClass:[NSArray class]])
-    {
-        return [ (NSArray *) jsonObjects firstObject];
-    }
-    
-    
-    return (NSDictionary *) jsonObjects;
+    return (NSArray *) jsonObjects;
 }
 
-- (NSString *) makeInsertRequestWithURL: (NSURL *) url body: (NSString *) body
+- (NSString *) parseSuccessJson: (NSDictionary *) successJson
 {
-    NSDictionary *responseDict = [self makePOSTRequestWithURL:url body:body];
-    
-    int success = [[responseDict objectForKey: @"success"] intValue];
-    NSString *error = [responseDict objectForKey:@"error"];
+    int success = [[successJson objectForKey: @"success"] intValue];
+    NSString *error = [successJson objectForKey:@"error"];
     
     if(success == 0 && [error isEqualToString:@""]) //Success in json comes back as string 1 or 0. Let's test that to see if error exists
     {
@@ -51,8 +44,17 @@
     return error;
 }
 
-- (NSDictionary *) makePOSTRequestWithURL: (NSURL *) url body: (NSString *) body
+- (NSString *) makeInsertRequestWithFileName: (NSString *) fileName body: (NSString *) body
 {
+    NSDictionary *responseDict = [self makePOSTRequestWithFileName:fileName body:body];
+    
+    return [self parseSuccessJson:responseDict];
+}
+
+- (NSArray *) makePOSTRequestWithFileName: (NSString *) fileName body: (NSString *) body
+{
+    NSURL *url = [NSURL URLWithString:fileName relativeToURL:[RJWebServer baseURL]];
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     [request setHTTPMethod:@"POST"];
@@ -82,9 +84,44 @@
     }];
     
     [task resume];
-    [NSThread sleepForTimeInterval:5];
+    [NSThread sleepForTimeInterval:2];
     
-    return [self getDictforJson:resultData];
+    return [self jsonResults:resultData];
+}
+
+- (NSDate *) dateWithoutTime: (NSDate *) date
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit;
+    NSDateComponents *todayComponents = [calendar components:unitFlags fromDate:date];
+    NSDate *dateWithoutTime = [calendar dateFromComponents:todayComponents];
+    
+    return dateWithoutTime;
+}
+
+- (NSDictionary *) allDatesForUser: (RJUser *) user
+{
+    NSMutableDictionary *allDates = [NSMutableDictionary dictionaryWithCapacity:1];
+    
+    NSString *body = [NSString stringWithFormat:@"userID=%d", user.userID];
+    
+    NSArray *results = [self makePOSTRequestWithFileName:@"get_all_workouts.php" body:body];
+    
+    for(NSDictionary *result in results)
+    {
+        NSString *dateString = (NSString *) [result objectForKey:@"Workout_Date"];
+        dateString = [RJPatternMatching sqlDateStringToDayFlowString:dateString];
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = [RJPatternMatching dayFlowFormat];
+        
+        NSDate *date = [formatter dateFromString:dateString];
+        date = [self dateWithoutTime:date];
+        
+        [allDates setObject:date forKey:[date description]];
+    }
+    
+    return [NSDictionary dictionaryWithObjects:[allDates allValues] forKeys:[allDates allKeys]];
 }
 
 - (RJUser *) userFromJson: (NSDictionary *) json
@@ -108,20 +145,16 @@
 {
     NSString *parameters = [NSString stringWithFormat:@"userName=%@&password=%@", userName, password];
     
-    NSURL *loginURL = [NSURL URLWithString:@"login.php" relativeToURL:[RJWebServer baseURL]];
-    
     RJWebServer *server = [[RJWebServer alloc] init];
     
-    NSDictionary *json = [server makePOSTRequestWithURL:loginURL body:parameters];
+    NSArray *jsonResults = [server makePOSTRequestWithFileName:@"login.php" body:parameters];
     
-    if(!json)
+    if(!jsonResults)
     {
         return nil;
     }
     
-    return [self userFromJson:json];
+    return [self userFromJson:[jsonResults firstObject]];
 }
-
-
 
 @end
