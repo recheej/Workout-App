@@ -8,6 +8,7 @@
 
 #import "RJWebServer.h"
 #import "RJPatternMatching.h"
+#import "RJSet.h"
 
 
 @implementation RJWebServer
@@ -155,6 +156,19 @@
     }
     
     return [self userFromJson:[jsonResults firstObject]];
+}
+
+- (NSDictionary *) workoutsForDate: (NSDate *) date user: (RJUser *) user
+{
+    NSString *sqlDate = [RJPatternMatching sqlDateFromDate:date];
+    
+    NSString *body = [NSString stringWithFormat:@"workoutDate=%@&userID=%d", sqlDate, user.userID];
+    
+    NSArray *results = [self makePOSTRequestWithFileName:@"workout_for_date.php" body:body];
+    
+    NSDictionary *result = [results firstObject];
+    
+    return result;
 }
 
 @end

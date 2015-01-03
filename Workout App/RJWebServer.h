@@ -23,4 +23,6 @@
 
 - (NSString *) parseSuccessJson: (NSDictionary *) successJson;
 
+- (NSDictionary *) workoutsForDate: (NSDate *) date user: (RJUser *) user;
+
 @end

@@ -10,6 +10,7 @@
 #import "RJSet.h"
 #import "RJViewController_AddExercise.h"
 #import "RJPatternMatching.h"
+#import "RJViewController_AddNewExercise.h"
 
 @interface RJ_ViewController_AddSets ()
 
@@ -49,7 +50,8 @@
 {
     NSArray *viewControllersOnStack = self.navigationController.viewControllers;
     
-    RJViewController_AddExercise *exerciseViewController = (RJViewController_AddExercise *) [viewControllersOnStack lastObject];
+    RJViewController_AddNewExercise *exerciseViewController = (RJViewController_AddNewExercise *) [viewControllersOnStack lastObject];
+    
     exerciseViewController.previousViewController = self;
     exerciseViewController.selectedSets = self.sets;
     

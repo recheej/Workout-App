@@ -7,7 +7,7 @@
 //
 
 #import "RJViewController_ChooseExercise.h"
-#import "RJViewController_AddExercise.h"
+#import "RJViewController_AddNewExercise.h"
 
 @interface RJViewController_ChooseExercise ()
 
@@ -53,7 +53,7 @@
 {
     NSArray *viewControllersOnStack = self.navigationController.viewControllers;
     
-    RJViewController_AddExercise *exerciseViewController = (RJViewController_AddExercise *) [viewControllersOnStack lastObject];
+    RJViewController_AddNewExercise *exerciseViewController = (RJViewController_AddNewExercise *) [viewControllersOnStack lastObject];
     exerciseViewController.previousViewController = self;
     
     if(cancelTapped)

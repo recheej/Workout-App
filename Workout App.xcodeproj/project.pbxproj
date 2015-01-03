@@ -16,7 +16,7 @@
 		548F7DF11A5216FC000E1C17 /* RJViewController_MuscleGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 548F7DF01A5216FC000E1C17 /* RJViewController_MuscleGroups.m */; };
 		54A5BD221A48E1C400DCF0F7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54A5BD201A48E1C400DCF0F7 /* Model.xcdatamodeld */; };
 		54A5BD241A48EA4B00DCF0F7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A5BD231A48EA4B00DCF0F7 /* CoreData.framework */; };
-		54C33F661A51A06C005BB086 /* RJViewController_AddExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C33F651A51A06C005BB086 /* RJViewController_AddExercise.m */; };
+		54BAB4291A574C5700AF3C07 /* RJViewController_AddNewExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BAB4281A574C5700AF3C07 /* RJViewController_AddNewExercise.m */; };
 		54C5C8B01A560E350019338C /* RJExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C5C8AF1A560E350019338C /* RJExercise.m */; };
 		54D05F651A410D110007C335 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F641A410D110007C335 /* main.m */; };
 		54D05F681A410D110007C335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D05F671A410D110007C335 /* AppDelegate.m */; };
@@ -74,8 +74,8 @@
 		548F7DF01A5216FC000E1C17 /* RJViewController_MuscleGroups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJViewController_MuscleGroups.m; sourceTree = "<group>"; };
 		54A5BD211A48E1C400DCF0F7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		54A5BD231A48EA4B00DCF0F7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		54C33F641A51A06C005BB086 /* RJViewController_AddExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJViewController_AddExercise.h; sourceTree = "<group>"; };
-		54C33F651A51A06C005BB086 /* RJViewController_AddExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJViewController_AddExercise.m; sourceTree = "<group>"; };
+		54BAB4271A574C5700AF3C07 /* RJViewController_AddNewExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJViewController_AddNewExercise.h; sourceTree = "<group>"; };
+		54BAB4281A574C5700AF3C07 /* RJViewController_AddNewExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJViewController_AddNewExercise.m; sourceTree = "<group>"; };
 		54C5C8AE1A560E350019338C /* RJExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RJExercise.h; path = ../RJExercise.h; sourceTree = "<group>"; };
 		54C5C8AF1A560E350019338C /* RJExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RJExercise.m; path = ../RJExercise.m; sourceTree = "<group>"; };
 		54D05F5F1A410D110007C335 /* Workout App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,8 +166,6 @@
 				545ACDD71A41244800754C95 /* RJViewController_SignUp.m */,
 				54D05F691A410D110007C335 /* ViewController.h */,
 				54D05F6A1A410D110007C335 /* ViewController.m */,
-				54C33F641A51A06C005BB086 /* RJViewController_AddExercise.h */,
-				54C33F651A51A06C005BB086 /* RJViewController_AddExercise.m */,
 				54F072E71A51E5E300A9F634 /* RJViewController_PreviousExercises.h */,
 				54F072E81A51E5E300A9F634 /* RJViewController_PreviousExercises.m */,
 				54F072F01A51FBCE00A9F634 /* RJ_ViewController_AddSets.h */,
@@ -176,6 +174,8 @@
 				548F7DF01A5216FC000E1C17 /* RJViewController_MuscleGroups.m */,
 				548AD96F1A52FD430088EF07 /* RJViewController_ChooseExercise.h */,
 				548AD9701A52FD430088EF07 /* RJViewController_ChooseExercise.m */,
+				54BAB4271A574C5700AF3C07 /* RJViewController_AddNewExercise.h */,
+				54BAB4281A574C5700AF3C07 /* RJViewController_AddNewExercise.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -476,10 +476,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				54F072E91A51E5E300A9F634 /* RJViewController_PreviousExercises.m in Sources */,
+				54BAB4291A574C5700AF3C07 /* RJViewController_AddNewExercise.m in Sources */,
 				548AD9711A52FD430088EF07 /* RJViewController_ChooseExercise.m in Sources */,
 				545ACDD81A41244800754C95 /* RJViewController_SignUp.m in Sources */,
 				540630EE1A4F72AF005F4623 /* RJWebServer.m in Sources */,
-				54C33F661A51A06C005BB086 /* RJViewController_AddExercise.m in Sources */,
 				54F538A61A4E4720004F7005 /* RJUser.m in Sources */,
 				5487AECF1A50DEAC00232E2F /* RJViewController_Calender.m in Sources */,
 				54D05F6B1A410D110007C335 /* ViewController.m in Sources */,

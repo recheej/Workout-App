@@ -7,9 +7,10 @@
 //
 
 #import "RJViewController_Calender.h"
-#import "RJViewController_AddExercise.h"
 #import "RJViewController_PreviousExercises.h"
 #import "RJWebServer.h"
+#import "RJPatternMatching.h"
+#import "RJViewController_AddNewExercise.h"
 
 
 @interface RJViewController_Calender ()
@@ -92,11 +93,15 @@
         previousController.selectedDate = selectedDate;
         previousController.user = self.user;
         
+        NSDictionary *workouts = [server workoutsForDate:date user:self.user];
+        previousController.workoutInfo = workouts;
+        previousController.addedNewExercise = false;
+        
         [self.navigationController pushViewController:previousController animated:true];
     }
     else
     {
-        RJViewController_AddExercise *exerciseController = [self.storyboard instantiateViewControllerWithIdentifier:@"AddExercise"];
+        RJViewController_AddNewExercise *exerciseController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewExercise"];
         
         exerciseController.selectedDate = selectedDate;
         exerciseController.user = self.user;

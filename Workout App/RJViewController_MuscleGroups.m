@@ -8,6 +8,7 @@
 
 #import "RJViewController_MuscleGroups.h"
 #import "RJViewController_AddExercise.h"
+#import "RJViewController_AddNewExercise.h"
 
 @interface RJViewController_MuscleGroups ()
 
@@ -53,7 +54,7 @@
 {
     NSArray *viewControllersOnStack = self.navigationController.viewControllers;
     int numControllersOnStack = [viewControllersOnStack count];
-    RJViewController_AddExercise *exerciseViewController = (RJViewController_AddExercise *) [viewControllersOnStack objectAtIndex:numControllersOnStack - 2];
+    RJViewController_AddNewExercise *exerciseViewController = (RJViewController_AddNewExercise *) [viewControllersOnStack objectAtIndex:numControllersOnStack - 2];
     
     exerciseViewController.selectedMuscleGroup = [muscleGroups objectAtIndex:indexPath.row];
     exerciseViewController.previousViewController = self;
