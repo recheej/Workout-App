@@ -8,7 +8,6 @@
 
 #import "RJ_ViewController_AddSets.h"
 #import "RJSet.h"
-#import "RJViewController_AddExercise.h"
 #import "RJPatternMatching.h"
 #import "RJViewController_AddNewExercise.h"
 
