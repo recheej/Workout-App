@@ -7,7 +7,6 @@
 //
 
 #import "RJViewController_MuscleGroups.h"
-#import "RJViewController_AddExercise.h"
 #import "RJViewController_AddNewExercise.h"
 
 @interface RJViewController_MuscleGroups ()

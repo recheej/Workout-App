@@ -15,7 +15,7 @@
 
 + (NSURL *) baseURL
 {
-    return [NSURL URLWithString:@"http://ec2-54-148-233-70.us-west-2.compute.amazonaws.com/"];
+    return [NSURL URLWithString:@"http://ec2-54-149-189-149.us-west-2.compute.amazonaws.com/"];
 }
 
 - (NSArray *) jsonResults: (NSData *) jsonData
@@ -85,7 +85,12 @@
     }];
     
     [task resume];
-    [NSThread sleepForTimeInterval:2];
+    
+    while(resultData == nil)
+    {
+        //we don't want to continue on with nil data so let's wait until we do.
+        continue;
+    }
     
     return [self jsonResults:resultData];
 }
